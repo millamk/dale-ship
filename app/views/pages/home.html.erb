@@ -2,16 +2,42 @@
   <div class="container">
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
+           <%= form_tag freights_path, class: "form-search",  method: :get do %>
+       <%= text_field_tag :query,
+           params[:modal],
+          class: "form-control search-input",
+          placeholder: "SEA"  %>
 
-    <!-- <div class="form-home">
-     <%#= form_tag freights_path, class: "form-search",  method: :get do %>
-       <%#= text_field_tag :query,
+
+        <%= text_field_tag :query,
            params[:origin],
           class: "form-control search-input",
-          placeholder: "Look for your vegan experiences"  %>
-        <%#= submit_tag "Search", class: "btn btn-search" %>
-      <%# end %>
-    </div> -->
+          placeholder: "Country, Seaport"  %>
+
+
+        <%= text_field_tag :query,
+           params[:destination],
+          class: "form-control search-input",
+          placeholder: "Country, Seaport"  %>
+
+
+        <%= text_field_tag :query,
+           params[:ready_to_load],
+          class: "form-calendar",
+          placeholder: "?"  %>
+
+
+        <%= text_field_tag :query,
+           params[:type_of_shipment],
+          class: "form-control search-input",
+          placeholder: "?"  %>
+        <%= submit_tag "Search", class: "btn btn-search" %>
+
+      <% end %>
+      </div>
+    </div>
+  </form>
+  </div>
   </div>
 </div>
 
