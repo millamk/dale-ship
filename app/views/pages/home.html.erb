@@ -1,2 +1,14 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% if user_signed_in? %>
+
+<% if current_user.user_type == "shipper" %>
+<%= link_to "Create shipper profile", new_shipper_path %>
+<% end %>
+
+<% if current_user.user_type == "carrier" %>
+<%= link_to "Create carrier profile", new_carrier_path %>
+<% end %>
+
+<% end %>
