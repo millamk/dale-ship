@@ -1,5 +1,6 @@
 class Carriers::FreightsController < ApplicationController
-  before_action
+  before_action :freight_params, only: :create
+
   def index
     @freights = current_user.carrier.freights.all
   end
@@ -10,12 +11,16 @@ class Carriers::FreightsController < ApplicationController
 
   def create
     @freight = Freight.new(freight_params)
-    @freight.user = current_user
+    @freight.carrier_id = current_user.carrier.id
     if @freight.save
-      redirect_to freight_path(@freight)
+      redirect_to carriers_freight_path(@freight)
     else
       render :new
     end
+  end
+
+  def show
+    @freight = Freight.find(params[:id])
   end
 
   private

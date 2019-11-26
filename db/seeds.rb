@@ -8,6 +8,7 @@ require 'faker'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Shipper.destroy_all
+Freight.destroy_all
 Carrier.destroy_all
 User.destroy_all
 
@@ -20,7 +21,7 @@ puts 'Creating shippers and carriers...'
 5.times do
 	Shipper.create!(
 		user: User.first,
-    first_name: Faker::Name.first_name,     
+    first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     CNPJ: "12345123451234",
     job_title: "shipper",
@@ -32,7 +33,7 @@ end
 5.times do
 	Carrier.create!(
 		user: User.first,
-    first_name: Faker::Name.first_name,     
+    first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     CNPJ: "12345123451234",
     job_title: "shipper",
@@ -40,5 +41,18 @@ end
     carrier_type: "SMB Forwarder"
   )
 end
+
+# 5.times do
+#   Freight.create!(
+#     carrier_id: Carrier.find(17),
+#     origin: Faker::Address.city,
+#     destination: Faker::Address.city,
+#     ready_to_load: DateTime.new(2019, 12, 30),
+#     type_of_shipment: "FCL",
+#     container_pack: "20",
+#     expire_date: DateTime.new(2019, 11, 22),
+#     price: "500"
+#   )
+# end
 
 puts 'Finished!'
