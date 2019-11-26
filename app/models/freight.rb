@@ -1,8 +1,7 @@
 class Freight < ApplicationRecord
   belongs_to :carrier
-  has_many :bookings, dependent: :destroy
+  # has_many :bookings, dependent: :destroy
 
-  validates :modal, presence: true
   validates :origin, presence: { in: ['name', 'address'] }
   validates :destination, presence: { in: ['name', 'address'] }
   validates :type_of_shipment, presence: true
