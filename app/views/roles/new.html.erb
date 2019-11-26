@@ -1,0 +1,13 @@
+
+
+<div class="container">
+  <%= form_with(url: roles_path, method: "post", local: true) do %>
+    <%= radio_button_tag(:role, "shipper") %>
+    <%= label_tag(:role_child, "I'm a shipper") %>
+    <%= radio_button_tag(:role, "carrier") %>
+    <%= label_tag(:role_adult, "I'm a carrier") %>
+    <%= submit_tag 'Create' %>
+  <% end %>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for(@freight) do |f| %>
+    <div class="form-inputs mt-3 offset-3 col-6">
+    <%= f.input :origin %>
+    <%= f.input :destination %>
+    <%= f.input :ready_to_load, label: 'Ready to load:', as: :date %>
+    <%= f.input :type_of_shipment, collection: ['FCL', 'LCL'] %>
+    <%= f.input :container_pack, collection: ['20', '40'] %>
+    <%= f.input :expire_date, as: :date %>
+    <%= f.input :price %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+  <% end %>
+  </div>
+</div>
+

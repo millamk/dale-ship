@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+
+.events_index {
+  display: flex;
+}
+
+.DashboardContainer {
+  margin-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.how-it-works{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-home {
+  text-align: center;
+  margin: 30px;
+  font-size: 35px;
+  padding-bottom: 28px;
+}
+
+.subtitle {
+  color: #8f8e87;
+  font-size: 25px;
+  margin-top: 30px;
+}

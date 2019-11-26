@@ -1,5 +1,4 @@
 class Shippers::FreightsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -12,6 +11,19 @@ class Shippers::FreightsController < ApplicationController
       @events = Event.all.page(params[:page]).per(3)
     end
   end
+
+  def show
+    @freight = Freight.find(params[:id])
+  end
+
+  def create
+    @freight = Freight.new(freight_params)
+    @freight.user = current_user
+    if @freight.save
+      redirect_to freight_path(@freight)
+    else
+      render :new
+    end
 
   def edit
     @freight = Freight.find(params[:id])
@@ -26,38 +38,16 @@ class Shippers::FreightsController < ApplicationController
     end
   end
 
-  def new
-    @freight = Freight.new
-  end
-
-  def create
-    @freight = Freight.new(freight_params)
-    @freight.user = current_user
-    if @freight.save
-      redirect_to freight_path(@freight)
-    else
-      render :new
-    end
-  end
-
   def destroy
     @freight = Freight.find(params[:id])
     @freight.destroy
     redirect_to root_path
   end
 
-  def show
-    @freight = Freight.find(params[:id])
-    @booking = Booking.new
-  end
-
   private
 
   def freight_params
-    params.require(:freight).permit(:modal, :origin_port, :destination_port, :type_of_shipment,
+    params.require(:freight).permit(:modal, :origin, :destination, :type_of_shipment,
                                   :container_pack, :carrier_id, :expire_date, :price, :transit_time)
   end
-end
-
-
 end
