@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_175556) do
+ActiveRecord::Schema.define(version: 2019_11_26_143759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2019_11_25_175556) do
     t.string "carrier_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "CNPJ"
+    t.string "job_title"
+    t.string "company_name"
     t.index ["user_id"], name: "index_carriers_on_user_id"
   end
 
@@ -50,6 +55,11 @@ ActiveRecord::Schema.define(version: 2019_11_25_175556) do
     t.string "vol_freq"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "CNPJ"
+    t.string "job_title"
+    t.string "company_name"
     t.index ["user_id"], name: "index_shippers_on_user_id"
   end
 
@@ -61,14 +71,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_175556) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "CNPJ"
-    t.string "job_title"
-    t.string "company_name"
     t.string "user_type"
-    t.boolean "shipper", default: false
-    t.boolean "carrier", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
