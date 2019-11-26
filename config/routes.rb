@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
 
@@ -7,12 +8,10 @@ Rails.application.routes.draw do
   end
 
   namespace :carriers do
-    resources :freights
+    resources :freights, only: %i[index]
   end
 
   resources :roles, only: %i[new create]
-
-  resources :freights
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

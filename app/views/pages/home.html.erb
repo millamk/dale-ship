@@ -1,35 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.icontainers.com/resources/img/meta/og_image.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1510681916233-314f497f3301?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);">
   <div class="container">
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
-
-      <%= simple_form_for Freight.new, url: freights_path, class: "form-search form-row align-items-center",  method: :get do |f| %>
-       <%= f.input :modal, label: false,
-          wrapper_html: { class: "col-1 search-input"},
-          placeholder: "SEA"  %>
-
-        <%= f.input :origin, label: false,
-          wrapper_html: { class: "col-2 search-input"},
-          placeholder: "Country, Seaport"  %>
-
-        <%= f.input :destination, label: false,
-          wrapper_html: { class: "col-auto search-input"},
-          placeholder: "Country, Seaport"  %>
-
-        <%= f.input :ready_to_load, label: false,
-          wrapper_html: { class: "form-calendar" },
-          placeholder: "?"  %>
-
-        <%= f.input :type_of_shipment, label: false,
-          wrapper_html: { class: "col-auto search-input"},
-          placeholder: "?"  %>
-        <%= submit_tag "Search", class: "btn btn-search" %>
-
-      <% end %>
-      </div>
-    </div>
-  </form>
-  </div>
   </div>
 </div>
 
