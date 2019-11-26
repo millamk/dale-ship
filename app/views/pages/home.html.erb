@@ -1,6 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<<<<<<< HEAD
 <% if user_signed_in? %>
 
 <% if current_user.user_type == "shipper" %>
@@ -12,3 +13,44 @@
 <% end %>
 
 <% end %>
+=======
+
+     <%= form_tag freights_path, class: "form-search",  method: :get do %>
+       <%= text_field_tag :query,
+           params[:modal],
+          class: "form-control search-input",
+          placeholder: "SEA"  %>
+
+
+        <%= text_field_tag :query,
+           params[:origin],
+          class: "form-control search-input",
+          placeholder: "Country, Seaport"  %>
+
+
+        <%= text_field_tag :query,
+           params[:destination],
+          class: "form-control search-input",
+          placeholder: "Country, Seaport"  %>
+
+
+        <%= text_field_tag :query,
+           params[:ready_to_load],
+          class: "form-calendar",
+          placeholder: "?"  %>
+
+
+        <%= text_field_tag :query,
+           params[:type_of_shipment],
+          class: "form-control search-input",
+          placeholder: "?"  %>
+        <%= submit_tag "Search", class: "btn btn-search" %>
+
+      <% end %>
+      </div>
+    </div>
+  </form>
+  </div>
+
+
+>>>>>>> master
