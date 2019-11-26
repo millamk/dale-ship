@@ -2,34 +2,26 @@
   <div class="container">
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
-           <%= form_tag freights_path, class: "form-search",  method: :get do %>
-       <%= text_field_tag :query,
-           params[:modal],
-          class: "form-control search-input",
+
+      <%= simple_form_for Freight.new, url: freights_path, class: "form-search form-row align-items-center",  method: :get do |f| %>
+       <%= f.input :modal, label: false,
+          wrapper_html: { class: "col-1 search-input"},
           placeholder: "SEA"  %>
 
-
-        <%= text_field_tag :query,
-           params[:origin],
-          class: "form-control search-input",
+        <%= f.input :origin, label: false,
+          wrapper_html: { class: "col-2 search-input"},
           placeholder: "Country, Seaport"  %>
 
-
-        <%= text_field_tag :query,
-           params[:destination],
-          class: "form-control search-input",
+        <%= f.input :destination, label: false,
+          wrapper_html: { class: "col-auto search-input"},
           placeholder: "Country, Seaport"  %>
 
-
-        <%= text_field_tag :query,
-           params[:ready_to_load],
-          class: "form-calendar",
+        <%= f.input :ready_to_load, label: false,
+          wrapper_html: { class: "form-calendar" },
           placeholder: "?"  %>
 
-
-        <%= text_field_tag :query,
-           params[:type_of_shipment],
-          class: "form-control search-input",
+        <%= f.input :type_of_shipment, label: false,
+          wrapper_html: { class: "col-auto search-input"},
           placeholder: "?"  %>
         <%= submit_tag "Search", class: "btn btn-search" %>
 
@@ -48,17 +40,17 @@
       <h2 class="title-home mb-5 border-bottom "><span style="color:#20b286">Online Freight Marketplace</span></h2>
       <div class="Grid row">
         <div class='col-4'>
-          <i class="fas fa-search-location" style="font-size:64px"></i>
+          <i class="fas fa-search-location" style="font-size:56px"></i>
           <h2 class="subtitle">SEARCH</h2>
           <p>Explore thousands of delicious <span style="color:#20b286">vegan</span> food experiences around the world. Once you have chosen your destination...</p>
         </div>
         <div class="col-4">
-          <i class="fas fa-calendar-day" style="font-size:64px"></i>
+          <i class="fas fa-calendar-day" style="font-size:56px"></i>
           <h2 class="subtitle">BOOK</h2>
           <p>Once you’ve made your choice, you simply need to select the dates you are available and click “Request to book”...</p>
         </div>
         <div class="col-4">
-          <i class="far fa-star" style="font-size:64px"></i>
+          <i class="far fa-star" style="font-size:56px"></i>
           <h2 class="subtitle">REVIEW</h2>
           <p>It’s time to enjoy your Eatgreen experience! Your selected host is waiting to meet you and share their food story...</p>
         </div>
@@ -71,17 +63,17 @@
       <h2 class="title-home border-bottom"><span style="color:#20b286">Add your company to DaleShip.com </span></h2>
       <div class="Grid row">
         <div class='col-4'>
-          <i class="far fa-newspaper" style="font-size:64px"></i>
+          <i class="far fa-newspaper" style="font-size:56px"></i>
           <h2 class="subtitle">OFFER</h2>
           <p>Want to share your passion for food with people from all over the world? Well you’ve come to the right place!...</p>
         </div>
         <div class="col-4">
-          <i class="fas fa-tasks" style="font-size:64px"></i>
+          <i class="fas fa-tasks" style="font-size:56px"></i>
           <h2 class="subtitle">MANAGE</h2>
          <p>Once you start hosting, it’s easy to manage requests and confirm reservations with guests from around the world...</p>
         </div>
         <div class="col-4">
-          <i class="fas fa-hat-wizard" style="font-size:64px"></i>
+          <i class="fas fa-hat-wizard" style="font-size:56px"></i>
           <h2 class="subtitle">WELCOME</h2>
           <p>The big moment is finally here! It’s time to share your food and passion with your guests. We guarantee you’ll enjoy...</p>
         </div>

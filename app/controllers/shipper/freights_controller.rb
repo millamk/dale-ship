@@ -1,5 +1,4 @@
 class Shippers::FreightsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -57,7 +56,4 @@ class Shippers::FreightsController < ApplicationController
     params.require(:freight).permit(:modal, :origin_port, :destination_port, :type_of_shipment,
                                   :container_pack, :carrier_id, :expire_date, :price, :transit_time)
   end
-end
-
-
 end

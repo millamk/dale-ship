@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-
   namespace :shipper do
     resources :freights, only: [:index]
   end
@@ -10,6 +9,8 @@ Rails.application.routes.draw do
   namespace :carriers do
     resources :freights
   end
+
+  resources :roles, only: %i[new create]
 
   resources :freights
 
