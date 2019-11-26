@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  namespace :shipper do
+  namespace :shippers do
     resources :freights, only: [:index]
   end
 

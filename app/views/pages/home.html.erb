@@ -1,5 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="dflex">
+
+     <%= form_tag shippers_freights_path, class: "form-inline mt-5",  method: :get do %>
+        <%= text_field_tag :origin, nil, class: 'form-control mr-sm-2', placeholder: 'Origem' %>
+        <%= text_field_tag :destination, nil, class: 'form-control mr-sm-2', placeholder: 'Destino' %>
+        <%= submit_tag :search, class: 'btn btn-primary' %>
+     <% end %>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
      <%#= form_tag freights_path, class: "form-search",  method: :get do %>
        <%#= text_field_tag :query,
@@ -8,11 +25,15 @@
           placeholder: "SEA"  %>
           <%#= select_tag "teste", options_for_select('1','2') %>
 
-    <input type="text" placeholder="Country,City,Port" value="" id="addr_from" autocomplete="off" class="ui-autocomplete-input">
 
-    <input type="text" placeholder="Country,City,Port" value="" id="addr_from" autocomplete="off" class="ui-autocomplete-input">
 
-    <input type="text" placeholder="Country,City,Port" value="" id="addr_from" autocomplete="off" class="ui-autocomplete-input">
+    <%#= simple_form_for @user do |f| %>
+  <%#= f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:month, :year] %>
+  <%#= f.input :accepts, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%#= f.button :submit %>
+<%# end %>
 
     <%# end %>
         <%#= text_field_tag :query,

@@ -17,6 +17,21 @@ class Shippers::FreightsController < ApplicationController
     @freight = Freight.find(params[:id])
   end
 
+  def new
+    @booking = Booking.new
+  end
+
+  def create
+    @booking = current_user.bookings.build(booking_params)    # Not the final implementation!
+    if @booking.save
+      flash[:success] = "You have submited the information successfully!"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
+    end
+  end
+
+
   def update
     @freight = Freight.find(params[:id])
     if @freight.update(freight_params)
@@ -60,4 +75,3 @@ class Shippers::FreightsController < ApplicationController
 end
 
 
-end
