@@ -8,7 +8,7 @@ class PagesController < ApplicationController
        sql_query = "title ILIKE :query OR address ILIKE :query OR type_of_meal ILIKE :query OR type_of_event ILIKE :query"
        @freights = Freight.where(sql_query, query: "%#{params[:query]}%").page(params[:page]).per(10)
     else
-      @freights = Freight.all.page(params[:page])
+      # @freights = Freight.all.page(params[:page])
     end
   end
 end
