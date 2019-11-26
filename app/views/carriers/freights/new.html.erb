@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for(@freight) do |f| %>
+  <%= simple_form_for([:carriers, @freight]) do |f| %>
     <div class="form-inputs mt-3 offset-3 col-6">
     <%= f.input :origin %>
     <%= f.input :destination %>
