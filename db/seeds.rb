@@ -13,12 +13,12 @@ Carrier.destroy_all
 User.destroy_all
 
 10.times do |i|
-user = User.create!(email: "teste#{i}@teste.com", password: "123123",)
+user = User.create!(email: "teste#{i}@teste.com", password: "123123")
 end
 
 puts 'Creating shippers and carriers...'
 
-5.times do
+1.times do
 	Shipper.create!(
 		user: User.first,
     first_name: Faker::Name.first_name,
@@ -30,7 +30,7 @@ puts 'Creating shippers and carriers...'
   )
 end
 
-5.times do
+1.times do
 	Carrier.create!(
 		user: User.first,
     first_name: Faker::Name.first_name,
@@ -42,17 +42,17 @@ end
   )
 end
 
-# 5.times do
-#   Freight.create!(
-#     carrier_id: Carrier.find(17),
-#     origin: Faker::Address.city,
-#     destination: Faker::Address.city,
-#     ready_to_load: DateTime.new(2019, 12, 30),
-#     type_of_shipment: "FCL",
-#     container_pack: "20",
-#     expire_date: DateTime.new(2019, 11, 22),
-#     price: "500"
-#   )
-# end
+5.times do
+  Freight.create!(
+    carrier: Carrier.find(1),
+    origin: Faker::Address.city,
+    destination: Faker::Address.city,
+    ready_to_load: DateTime.new(2019, 12, 30),
+    type_of_shipment: "FCL",
+    container_pack: "20",
+    expire_date: DateTime.new(2019, 11, 22),
+    price: "500"
+  )
+end
 
 puts 'Finished!'

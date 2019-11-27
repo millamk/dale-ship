@@ -1,29 +1,38 @@
-<h1>My list of freight</h1>
-<% @freights.each do |freight| %>
-  <h2><%= freight.origin %></h2>
-  <p><%= freight.destination %></p>
-<% end %>
 
-<div class="carrier-freights-table">	
-	<table>
-	  <tr>
-	    <th>Origin</th>
-	    <th>Destination</th>
-	    <th>Ready to Load</th>
-	    <th>Type of Shipment</th>
-	    <th>Container Pack</th>
-	    <th>Expire Date</th>
-	    <th>Price</th>
-	  </tr>
-	  <tr>
-	    <td><%= @freight.origin %></td>
-	    <td><%= @freight.destination %></td>
-	    <td><%= @freight.ready_to_load %></td>
-	    <td><%= @freight.type_of_shipment %></td>
-	    <td><%= @freight.container_pack %></td>
-	    <td><%= @freight.expire_date %></td>
-	    <td><%= @freight.price %></td>
-	  </tr>
+<div class="container">
+<h1>My list of freight</h1>
+
+<%# @freights.each do |freight| %>
+  <h2><%#= freight.origin %></h2>
+  <p><%#= freight.destination %></p>
+<%# end %>
+
+	<table class='table'>
+		<thead class="thead-dark">
+		  <tr>
+		  	<th scope="col">#</th>
+		    <th scope="col">Origin</th>
+		    <th scope="col">Destination</th>
+		    <th scope="col">Ready to Load</th>
+		    <th scope="col">Type of Shipment</th>
+		    <th scope="col">Container Pack</th>
+		    <th scope="col">Expire Date</th>
+		    <th scope="col">Price</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+	    <% @freights.each do |freight| %>
+			  <tr>
+			  	<th scope="row"><%= freight.id %></th>
+			    <td><%= freight.origin %></td>
+			    <td><%= freight.destination %></td>
+			    <td><%= freight.ready_to_load %></td>
+			    <td><%= freight.type_of_shipment %></td>
+			    <td><%= freight.container_pack %></td>
+			    <td><%= freight.expire_date %></td>
+			    <td><%= freight.price %></td>
+			  </tr>
+		  <% end %>
+	  </tbody>
 	</table>	
 </div>
-

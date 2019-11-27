@@ -2,7 +2,7 @@ class Carriers::FreightsController < ApplicationController
   before_action :freight_params, only: :create
 
   def index
-    @freights = current_user.carrier.freights.all
+    @freights = current_user.carrier.freights
   end
 
   def new
