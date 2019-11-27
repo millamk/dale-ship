@@ -2,13 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    if params[:query].present?
-      sql_query = "title ILIKE :query OR address ILIKE :query OR type_of_meal ILIKE :query OR type_of_event ILIKE :query"
-      @freights = Freight.where(sql_query, query: "%#{params[:query]}%").page(params[:page]).per(3)
-       sql_query = "title ILIKE :query OR address ILIKE :query OR type_of_meal ILIKE :query OR type_of_event ILIKE :query"
-       @freights = Freight.where(sql_query, query: "%#{params[:query]}%").page(params[:page]).per(10)
+    if params[:origin].present? && params[:origin].present?
+      sql_query = "origin ILIKE :origin AND destination ILIKE :destination"
+      @freights = Freight.where(sql_query, origin: "%#{params[:origin]}%", destination: "%#{params[:destination]}%")
     else
-      # @freights = Freight.all.page(params[:page])
+      @freights = Freight.all
     end
   end
 end
