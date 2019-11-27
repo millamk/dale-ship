@@ -11,6 +11,8 @@ class Carriers::FreightsController < ApplicationController
 
   def create
     @freight = Freight.new(freight_params)
+    @freight.origin = Port.find(params[:freight][:origin]).name
+    @freight.destination = Port.find(params[:freight][:destination]).name
     @freight.carrier_id = current_user.carrier.id
     if @freight.save
       redirect_to carriers_freight_path(@freight)
@@ -45,8 +47,7 @@ class Carriers::FreightsController < ApplicationController
   private
 
   def freight_params
-    params.require(:freight).permit(:origin, :destination, :ready_to_load,
-                                    :type_of_shipment, :container_pack,
-                                    :expire_date, :price)
+    params.require(:freight).permit(:ready_to_load, :type_of_shipment,
+                                    :container_pack, :expire_date, :price)
   end
 end

@@ -2,6 +2,9 @@
 <% @freights.each do |freight| %>
   <h2><%= freight.origin %></h2>
   <p><%= freight.destination %></p>
+  <%= simple_form_for [freight, @booking]  do |f| %>
+    <%= f.submit 'Book now', class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
 
 <div class="freight-card offset-3 col-6 ">
