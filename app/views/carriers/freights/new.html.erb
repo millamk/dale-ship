@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for([:carriers, @freight]) do |f| %>
     <div class="form-inputs mt-3 offset-3 col-6">
-    <%= f.input :origin %>
+    <%= f.input :origin, collection: Port.all %>
     <%= f.input :destination %>
     <%= f.input :ready_to_load, label: 'Ready to load:', as: :date %>
     <%= f.input :type_of_shipment, collection: ['FCL', 'LCL'] %>
