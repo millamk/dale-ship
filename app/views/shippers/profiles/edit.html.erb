@@ -1,2 +1,13 @@
-<h1>Shippers::Profiles#edit</h1>
-<p>Find me in app/views/shippers/profiles/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for(@shipper, url: shippers_profile_path) do |f| %>
+    <div class="form-inputs mt-3 offset-3 col-6">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :CNPJ %>
+    <%= f.input :company_name %>
+    <%= f.input :job_title %>
+    <%= f.input :vol_freq %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+  <% end %>
+  </div>
+</div>

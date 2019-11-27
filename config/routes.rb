@@ -11,12 +11,12 @@ Rails.application.routes.draw do
 
   namespace :shippers do
     resources :freights, only: [:index]
-    resource :profile, only: %i[edit update]
+    resource :profile, only: %i[edit update show]
   end
 
   namespace :carriers do
     resources :freights, only: %i[index new create show]
-    resource :profile, only: %i[edit update]
+    resource :profile, only: %i[edit update show]
   end
 
   resources :roles, only: %i[new create]
