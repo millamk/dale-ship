@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :carriers do
-    resources :freights, only: %i[index new create show]
+    resources :freights, only: %i[index new create show edit update destroy]
   end
 
   resources :roles, only: %i[new create]

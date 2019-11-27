@@ -4,3 +4,26 @@
   <p><%= freight.destination %></p>
 <% end %>
 
+<div class="carrier-freights-table">	
+	<table>
+	  <tr>
+	    <th>Origin</th>
+	    <th>Destination</th>
+	    <th>Ready to Load</th>
+	    <th>Type of Shipment</th>
+	    <th>Container Pack</th>
+	    <th>Expire Date</th>
+	    <th>Price</th>
+	  </tr>
+	  <tr>
+	    <td><%= @freight.origin %></td>
+	    <td><%= @freight.destination %></td>
+	    <td><%= @freight.ready_to_load %></td>
+	    <td><%= @freight.type_of_shipment %></td>
+	    <td><%= @freight.container_pack %></td>
+	    <td><%= @freight.expire_date %></td>
+	    <td><%= @freight.price %></td>
+	  </tr>
+	</table>	
+</div>
+
