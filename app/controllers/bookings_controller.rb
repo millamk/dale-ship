@@ -1,17 +1,10 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new
     @booking.shipper = current_user.shipper
-    @booking.freight = Freight.find(:freight_id)
-    if @booking.save
-      redirect_to shippers_booking_path
-    else
-      render :new
-    end
+    @booking.freight = Freight.find(params[:freight_id])
+    @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def show
