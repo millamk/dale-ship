@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
 
   namespace :shippers do
     resources :freights, only: [:index]
@@ -16,8 +15,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
   resources :bookings, only: [:show]
-
   resources :roles, only: %i[new create]
+ 
+  get :search, to: 'pages#search'
+
+  root to: 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
