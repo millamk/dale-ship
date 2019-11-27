@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :profile, only: %i[edit update show]
     get ':freight_id/bookings/new', to: 'bookings#new', as: 'new_booking'
     post ':freight_id/bookings', to: 'bookings#create', as: 'create_booking'
+    resources :bookings, only: [:show]
   end
 
   namespace :carriers do
