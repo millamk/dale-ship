@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_143759) do
+ActiveRecord::Schema.define(version: 2019_11_27_163158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "shipper_id"
+    t.bigint "freight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["freight_id"], name: "index_bookings_on_freight_id"
+    t.index ["shipper_id"], name: "index_bookings_on_shipper_id"
+  end
 
   create_table "carriers", force: :cascade do |t|
     t.bigint "user_id"
@@ -76,6 +85,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_143759) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "freights"
+  add_foreign_key "bookings", "shippers"
   add_foreign_key "carriers", "users"
   add_foreign_key "freights", "carriers"
   add_foreign_key "shippers", "users"

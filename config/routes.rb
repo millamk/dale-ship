@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-
-  namespace :carriers do
-    get 'profiles/edit'
-  end
-  namespace :shippers do
-    get 'profiles/edit'
-  end
   devise_for :users
   root to: 'pages#home'
 
   namespace :shippers do
     resources :freights, only: [:index]
     resource :profile, only: %i[edit update show]
+    get ':freight_id/bookings/new', to: 'bookings#new', as: 'new_booking'
+    post ':freight_id/bookings', to: 'bookings#create', as: 'create_booking'
   end
 
   namespace :carriers do
