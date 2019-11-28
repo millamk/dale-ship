@@ -1,0 +1,6 @@
+<div class="container">
+  <%= simple_form_for([:carriers, @booking]) do |f| %>
+    <%= f.input :status, as: :select, collection: Booking.statuses.values %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+  <% end %>
+</div>

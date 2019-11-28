@@ -1,5 +1,4 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../app/assets/images/multimodal.png);">
+<div class="banner">
   <div class="container">
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
@@ -11,15 +10,17 @@
       <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 destino-search-form',
       placeholder: 'Destination'  %>
       <%= text_field_tag :ready_to_load, params[:ready_to_load], class:" datepicker", placeholder: "Ready to Load"%>
-      <%= select_tag 'type_of_shipment', options_for_select(Freight.all.collect {|freight| freight.type_of_shipment}), include_blank: true, class: 'form-control mr-sm-2 type_of_shipment-search-form', placeholder: 'Type of Shipment'  %>
+      <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 type_of_shipment-search-form', placeholder: 'Type of Shipment'  %>
       <%= submit_tag :search, class: 'btn btn-primary' %>
       <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="how-it-works">
 <h1>CUSTOMERS ENJOYING ONLINE OCEAN FREIGHT</h1>
-<div class="how-it-works" >
   <div class="card m-5 text-center">
     <div class="DashboardContainer text-center">
       <h2 class="title-home mb-5 border-bottom "><span style="color:#20b286">simplifying global trade</span></h2>
