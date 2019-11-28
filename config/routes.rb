@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   resources :freights, only: [] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:show]
+  resources :bookings, only: [:show, :index]
   resources :roles, only: %i[new create]
- 
+
   get :search, to: 'pages#search'
 
   root to: 'pages#home'
