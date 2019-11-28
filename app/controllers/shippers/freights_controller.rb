@@ -3,7 +3,6 @@ class Shippers::FreightsController < ApplicationController
 
   def index
     @freights = Freight.all
-    @booking = Booking.new
   end
 
   def show

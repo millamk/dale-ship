@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :carriers do
     resources :freights, only: %i[index new create show edit update destroy]
     resource :profile, only: %i[edit update show]
+    resources :bookings, only: [:index, :edit, :update]
   end
 
   resources :freights, only: [] do
