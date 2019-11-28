@@ -13,7 +13,6 @@ Carrier.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 Port.destroy_all  if Rails.env.development?
 
-
 if Rails.env.development?
   puts 'Creating shippers and carriers...'
   10.times do |i|

@@ -1,0 +1,27 @@
+.freight-card {
+	border: lightgray 1px solid;
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 5px;
+	background-color: lightblue;
+}
+
+.dale-logo {
+	width: 5rem
+}
+
+.card-company-name {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: -1rem;
+	margin-top: -1rem;
+}
+
+.company-title {
+	padding-top: 1rem;
+}
+
+.card-route {
+	display: flex;
+}
