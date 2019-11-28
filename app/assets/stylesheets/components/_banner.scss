@@ -1,13 +1,14 @@
 .banner {
-  background-size: cover;
   background-position: center;
   padding: 150px 0;
   text-align: center;
+  background: linear-gradient(107deg, rgba(33,169,171,0.5) 0%, rgba(253,187,45,0.5) 100%), url(worldmap.jpg);
+  background-size: contain;
 }
 
 .banner h1 {
   margin: 0;
-  color: #fff9d1;
+  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 40px;
   font-weight: bold;
@@ -16,7 +17,8 @@
 .banner p {
   margin-top: 8px;
   font-size: 23px;
-  color: #fff9d1;
+  color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
