@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_201704) do
     t.bigint "freight_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "approved", default: false
+    t.string "status", default: "pending"
     t.index ["freight_id"], name: "index_bookings_on_freight_id"
     t.index ["shipper_id"], name: "index_bookings_on_shipper_id"
   end

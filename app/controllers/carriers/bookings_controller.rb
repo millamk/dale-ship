@@ -1,5 +1,5 @@
 class Carriers::BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update]
+  before_action :set_booking, only: [:edit, :update, :show]
   def index
     @bookings = Booking.joins(:freight).where(freights: {carrier_id: current_user.carrier})
   end
@@ -12,6 +12,10 @@ class Carriers::BookingsController < ApplicationController
       redirect_to carriers_bookings_path
     else
       render :edit
+    end
+  end
+
+  def show
   end
 
   private
@@ -21,6 +25,6 @@ class Carriers::BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:approved)
+    params.require(:booking).permit(:status)
   end
 end

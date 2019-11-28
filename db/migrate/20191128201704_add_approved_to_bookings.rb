@@ -1,5 +1,5 @@
 class AddApprovedToBookings < ActiveRecord::Migration[5.2]
   def change
-    add_column :bookings, :approved, :boolean, default: false
+    add_column :bookings, :status, :string, default: 'pending'
   end
 end

@@ -4,18 +4,18 @@ Rails.application.routes.draw do
   namespace :shippers do
     resources :freights, only: [:index]
     resource :profile, only: %i[edit update show]
+    resources :bookings, only: [:index, :show]
   end
 
   namespace :carriers do
     resources :freights, only: %i[index new create show edit update destroy]
     resource :profile, only: %i[edit update show]
-    resources :bookings, only: [:index, :edit, :update]
+    resources :bookings, only: [:index, :edit, :update, :show]
   end
 
   resources :freights, only: [] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:show, :index]
   resources :roles, only: %i[new create]
 
   get :search, to: 'pages#search'

@@ -3,6 +3,7 @@ class Carriers::FreightsController < ApplicationController
 
   def index
     @freights = current_user.carrier.freights
+    @bookings = Booking.joins(:freight).where(freights: { carrier_id: current_user.carrier }, status: 'available')
   end
 
   def new
