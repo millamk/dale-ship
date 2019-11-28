@@ -8,10 +8,12 @@
   <div class="dflex">
 
      <%= form_tag search_path, class: "form-inline mt-5",  method: :get do %>
-        <%= text_field_tag :origin, nil, class: 'form-control mr-sm-2', placeholder: 'Origem' %>
+        <%= text_field_tag :origin, nil, class: 'form-control mr-sm-2 origin-search-form', placeholder: 'Origem' %>
         <%= text_field_tag :destination, nil, class: 'form-control mr-sm-2', placeholder: 'Destino' %>
         <%= submit_tag :search, class: 'btn btn-primary' %>
      <% end %>
+
+  
 
   </div>
 </div>
