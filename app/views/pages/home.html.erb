@@ -3,17 +3,18 @@
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
 
-    <div class="container">
+<div class="formhome">
   <div class="dflex">
-
-     <%= form_tag search_path, class: "form-inline mt-5",  method: :get do %>
-        <%= text_field_tag :origin, nil, class: 'form-control mr-sm-2', placeholder: 'Origem' %>
-        <%= text_field_tag :destination, nil, class: 'form-control mr-sm-2', placeholder: 'Destino' %>
-        <%= submit_tag :search, class: 'btn btn-primary' %>
-     <% end %>
-
-  </div>
-</div>
+    <%= form_tag search_path, class: "form-inline mt-5",  method: :get do %>
+      <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 origin-search-form', placeholder: 'Origin'  %>
+      <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 destino-search-form',
+      placeholder: 'Destination'  %>
+      <%= text_field_tag :ready_to_load, params[:ready_to_load], class:" datepicker", placeholder: "Ready to Load"%>
+      <%= select_tag 'type_of_shipment', options_for_select(Freight.all.collect {|freight| freight.type_of_shipment}), include_blank: true, class: 'form-control mr-sm-2 type_of_shipment-search-form', placeholder: 'Type of Shipment'  %>
+      <%= submit_tag :search, class: 'btn btn-primary' %>
+      <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -38,36 +39,30 @@
           <h2 class="subtitle">REVIEW</h2>
           <p>It’s time to enjoy your Eatgreen experience! Your selected host is waiting to meet you and share their food story...</p>
         </div>
-
       </div>
     </div>
   </div>
 
-
-
-
-
-  <div class="card text-center m-5">
-    <div class="DashboardContainer text-center">
-      <h2 class="title-home border-bottom"><span style="color:#20b286">Add your company to DaleShip.com </span></h2>
-      <div class="Grid row">
-        <div class='col-4'>
-          <i class="far fa-newspaper" style="font-size:56px"></i>
-          <h2 class="subtitle">OFFER</h2>
-          <p>Want to share your passion for food with people from all over the world? Well you’ve come to the right place!...</p>
-        </div>
-        <div class="col-4">
-          <i class="fas fa-tasks" style="font-size:56px"></i>
-          <h2 class="subtitle">MANAGE</h2>
-         <p>Once you start hosting, it’s easy to manage requests and confirm reservations with guests from around the world...</p>
-        </div>
-        <div class="col-4">
-          <i class="fas fa-hat-wizard" style="font-size:56px"></i>
-          <h2 class="subtitle">WELCOME</h2>
-          <p>The big moment is finally here! It’s time to share your food and passion with your guests. We guarantee you’ll enjoy...</p>
-        </div>
+<div class="card text-center m-5">
+  <div class="DashboardContainer text-center">
+    <h2 class="title-home border-bottom"><span style="color:#20b286">Add your company to DaleShip.com </span></h2>
+    <div class="Grid row">
+      <div class='col-4'>
+        <i class="far fa-newspaper" style="font-size:56px"></i>
+        <h2 class="subtitle">OFFER</h2>
+        <p>Want to share your passion for food with people from all over the world? Well you’ve come to the right place!...</p>
+      </div>
+      <div class="col-4">
+        <i class="fas fa-tasks" style="font-size:56px"></i>
+        <h2 class="subtitle">MANAGE</h2>
+       <p>Once you start hosting, it’s easy to manage requests and confirm reservations with guests from around the world...</p>
+      </div>
+      <div class="col-4">
+        <i class="fas fa-hat-wizard" style="font-size:56px"></i>
+        <h2 class="subtitle">WELCOME</h2>
+        <p>The big moment is finally here! It’s time to share your food and passion with your guests. We guarantee you’ll enjoy...</p>
       </div>
     </div>
   </div>
 </div>
-
+</div>
