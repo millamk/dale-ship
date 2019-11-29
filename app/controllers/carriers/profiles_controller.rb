@@ -22,6 +22,6 @@ class Carriers::ProfilesController < ApplicationController
 
   def carrier_params
     params.require(:carrier).permit(:first_name, :last_name, :CNPJ, :job_title,
-                                    :company_name, :carriers_type)
+                                    :company_name, :carriers_type, :photo)
   end
 end
