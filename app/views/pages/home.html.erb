@@ -3,25 +3,24 @@
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
 
-<div class="formhome">
-  <div class="dflex">
+
+  <div class="dflex formhome">
     <%= form_tag search_path, class: "form-inline mt-5",  method: :get do %>
       <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 origin-search-form', placeholder: 'Origin'  %>
       <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 destino-search-form',
       placeholder: 'Destination'  %>
       <%= text_field_tag :ready_to_load, params[:ready_to_load], class:" datepicker", placeholder: "Ready to Load"%>
       <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 type_of_shipment-search-form', placeholder: 'Type of Shipment'  %>
-      <%= submit_tag :search, class: 'btn btn-primary' %>
+      <%= submit_tag :search, class: 'btn btn-primary searchbtn' %>
       <% end %>
       </div>
     </div>
   </div>
-</div>
 
+<div class="container">
 
 <div class="how-it-works">
-<h1>CUSTOMERS ENJOYING ONLINE OCEAN FREIGHT</h1>
-  <div class="card m-5 text-center">
+  <div class="card text-center" style="color:#30618F">
     <div class="DashboardContainer text-center">
       <h2 class="title-home mb-5 border-bottom "><span style="color:#20b286">simplifying global trade</span></h2>
       <div class="Grid row">
@@ -49,9 +48,30 @@
       </div>
     </div>
   </div>
-  <h1>I WANT BE A FORWARDER PARTNER </h1>
 
-  <div class="card text-center m-5">
+  <div class="cssgrid">
+      <div class="title-grid m-5">
+        <h3 class="wow fadeInUp animated">Technology combined with international logistics</h1> 
+        <p>* receive online quotation</p> 
+        <p>* no hidden fees</p>
+        <p>* reduce your international shipping costs</p>
+        <p>* manage and track your shipments</p>
+      </div>
+      <div style="width: 10vw;">
+      <%= image_tag("multimodal.png", width: '500px') %>  
+      </div>
+      <%= image_tag("global_coverage.jpg", width: '500px') %>      
+      <div class="title-grid m-5">
+        <h3 class="wow fadeInUp animated">DaleShip digital solutions</h1> 
+        <p>* powering international freight comparison</p> 
+        <p>* quick and flexible tool</p>
+        <p>* boosting digital network connections</p>
+        <p>* making business around the world</p>
+      </div>
+  </div>
+
+
+  <div class="card text-center" style="color:#30618F">
     <div class="DashboardContainer text-center">
       <h2 class="title-home border-bottom"><span style="color:#20b286">YOUR CUSTOMERS ARE ALREADY ONLINE</span></h2>
       <div class="Grid row">
@@ -74,6 +94,9 @@
     </div>
   </div>
 </div>
+
+<!-- </div> -->
+
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
