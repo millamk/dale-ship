@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_201704) do
+ActiveRecord::Schema.define(version: 2019_11_29_145720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_201704) do
     t.string "CNPJ"
     t.string "job_title"
     t.string "company_name"
+    t.string "photo"
     t.index ["user_id"], name: "index_carriers_on_user_id"
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_201704) do
     t.string "CNPJ"
     t.string "job_title"
     t.string "company_name"
+    t.string "photo"
     t.index ["user_id"], name: "index_shippers_on_user_id"
   end
 
