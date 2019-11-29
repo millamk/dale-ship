@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'faker'
 gem 'select2-rails'
 gem 'jquery-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
