@@ -1,5 +1,7 @@
     <h1>Show page</h1>
-    <%= @freight.origin %>
+    <p>ID: <%= @freight.id %></p>
+    <p>Origem: <%= @freight.origin %></p>
+    <p>Destino: <%= @freight.destination %></p>
 
 	  <%= link_to "Back to home", root_path, class: 'btn btn-primary rounded-lg' %>
 	  <%= link_to "Edit", edit_carriers_freight_path, class: 'btn btn-secondary rounded-lg' %>

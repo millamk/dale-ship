@@ -22,6 +22,6 @@ class Shippers::ProfilesController < ApplicationController
 
   def shipper_params
     params.require(:shipper).permit(:first_name, :last_name, :CNPJ, :job_title,
-                                    :company_name, :vol_freq)
+                                    :company_name, :vol_freq, :photo)
   end
 end

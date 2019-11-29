@@ -1,6 +1,7 @@
 class Freight < ApplicationRecord
   belongs_to :carrier
-  # has_many :bookings, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :shippers, through: :bookings
 
   scope :start, ->(origin) { where('origin ILIKE ?', origin) }
   scope :finish, ->(destination) { where('destination ILIKE ?', destination) }
