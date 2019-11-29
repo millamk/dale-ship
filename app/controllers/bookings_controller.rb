@@ -4,14 +4,6 @@ class BookingsController < ApplicationController
     @booking.shipper = current_user.shipper
     @booking.freight = Freight.find(params[:freight_id])
     @booking.save
-    redirect_to booking_path(@booking)
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
-  def index
-    @bookings = Booking.all
+    redirect_to shippers_booking_path(@booking)
   end
 end
