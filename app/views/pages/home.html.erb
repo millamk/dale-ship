@@ -3,8 +3,8 @@
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <p>Unique trading experience shipping to and from anywhrere</p>
 
-<div class="formhome">
-  <div class="dflex">
+
+  <div class="dflex formhome">
     <%= form_tag search_path, class: "form-inline mt-5",  method: :get do %>
       <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 origin-search-form', placeholder: 'Origin'  %>
       <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 destino-search-form',
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 
 <div class="how-it-works">
