@@ -13,12 +13,13 @@
         <th scope="col">Expire Date</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
+        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
       <% @bookings.each do |booking| %>
         <tr>
-          <th scope="row"><%= booking.freight.id %></th>
+          <th scope="row"><%= booking.id %></th>
           <td><%= booking.freight.origin %></td>
           <td><%= booking.freight.destination %></td>
           <td><%= booking.freight.ready_to_load %></td>
@@ -26,7 +27,8 @@
           <td><%= booking.freight.container_pack %></td>
           <td><%= booking.freight.expire_date %></td>
           <td><%= booking.freight.price %></td>
-          <td><%= booking.status %></td>
+          <td><%= booking.status.capitalize %></td>
+          <td><%= link_to "Click here", edit_carriers_booking_path(booking), class: 'btn btn-secondary' %></td>
         </tr>
       <% end %>
     </tbody>
