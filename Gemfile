@@ -19,7 +19,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
-gem 'select2-rails'
+# gem 'select2-rails'
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 
