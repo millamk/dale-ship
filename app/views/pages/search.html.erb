@@ -3,16 +3,16 @@
 	<div class="row">
 	  <div class="col-sm-4">
 	    <div class="card">
-	      <div class="card-body freightcard">
+	      <div class="card-body freightcard"> 
 	        <h5 class="card-title">Company name</h5>
 	        <p class="card-text">Origin: <%= freight.origin %></p>
 	        <p class="card-text">Destination: <%= freight.destination %></p>
 	        <p>
-				    Ready to Load Date: <%=freight.ready_to_load.day %> / <%=freight.ready_to_load.month %> / <%=freight.ready_to_load.year %>
-			    </p>
-			    <p>
+				    Ready to Load Date: <%=freight.ready_to_load.day %> / <%=freight.ready_to_load.month %> / <%=freight.ready_to_load.year %> 
+			    </p> 
+			    <p> 
 				    Type of Shipment: <%=freight.type_of_shipment %>	<%=freight.container_pack %>
-			    </p>
+			    </p> 
 		    	<%= simple_form_for [freight, @booking]  do |f| %>
 		        <%= f.submit 'Book now', class: 'btn btn-primary' %>
 		      <% end %>	      
@@ -20,5 +20,5 @@
 	    </div>
 	  </div>
 	</div>	
-<% end %>
+<% end %> 
 
