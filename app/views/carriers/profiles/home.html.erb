@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center mb-4">Your dashboard:</h1>
+    <div class="d-flex dashboard-cards" style="justify-content: space-around;">
+      <%= link_to carriers_bookings_path do %>
+      <div class="dashboard d-flex">
+        <div style="margin: 0 auto; height: 40vh;">
+          <div class="img-dashboard-one"></div>
+            <h2 class="text-center mb-4">ORDERS</h2>
+            <p>Manage and update all the orders you've received</p>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to carriers_freights_path do %>
+      <div class="dashboard d-flex">
+        <div style="margin: 0 auto; height: 40vh;">
+          <div class="img-dashboard-two"></div>
+            <h2 class="text-center">FREIGHT</h2>
+            <p>See the list of all the freights you've created</p>
+        </div>
+      </div>
+    </div>
+      <% end %>
+</div>
