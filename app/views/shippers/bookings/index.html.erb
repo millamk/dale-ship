@@ -7,11 +7,12 @@
         <th scope="col">#</th>
         <th scope="col">Origin</th>
         <th scope="col">Destination</th>
-        <th scope="col">Ready to Load</th>
+        <th scope="col">Ready to load</th>
         <th scope="col">Type of Shipment</th>
-        <th scope="col">Container Pack</th>
-        <th scope="col">Expire Date</th>
+        <th scope="col">Container</th>
         <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col">More details</th>
       </tr>
     </thead>
     <tbody>
@@ -20,11 +21,12 @@
           <th scope="row"><%= booking.freight.id %></th>
           <td><%= booking.freight.origin %></td>
           <td><%= booking.freight.destination %></td>
-          <td><%= booking.freight.ready_to_load %></td>
+          <td><%= booking.freight.ready_to_load.day %> / <%= booking.freight.ready_to_load.month %> / <%= booking.freight.ready_to_load.year %></td>
           <td><%= booking.freight.type_of_shipment %></td>
           <td><%= booking.freight.container_pack %></td>
-          <td><%= booking.freight.expire_date %></td>
           <td><%= booking.freight.price %></td>
+          <td><%= booking.status.capitalize %></td>
+          <td><%= link_to "Click here", shippers_booking_path(booking), class: 'btn btn-secondary' %></td>
         </tr>
       <% end %>
     </tbody>
