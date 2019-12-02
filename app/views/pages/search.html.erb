@@ -1,6 +1,6 @@
 <h2>Your Search Results</h2>
 
- <% @freights.each do |freight| %>
+ <% @search.each do |freight| %>
  <p>Origin: <%= freight.origin %> </p>
  <p>Destination: <%= freight.destination %></p>
  <%= simple_form_for [freight, @booking]  do |f| %>
