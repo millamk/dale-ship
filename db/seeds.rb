@@ -7,13 +7,12 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Shipper.destroy_all if Rails.env.development?
-Freight.destroy_all if Rails.env.development?
-Carrier.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
-Port.destroy_all  if Rails.env.development?
+Shipper.destroy_all
+Freight.destroy_all
+Carrier.destroy_all
+User.destroy_all
+Port.destroy_all
 
-if Rails.env.development?
   puts 'Creating shippers and carriers...'
   10.times do |i|
     user = User.create!(email: "teste#{i}@teste.com", password: "123123",)
@@ -46,8 +45,8 @@ if Rails.env.development?
   5.times do
     Freight.create!(
       carrier: Carrier.all.sample,
-      origin: Faker::Address.city,
-      destination: Faker::Address.city,
+      origin: 'Recife',
+      destination: 'Manaus' ,
       ready_to_load: DateTime.new(2019, 12, 30),
       type_of_shipment: "FCL",
       container_pack: "20",
@@ -55,7 +54,6 @@ if Rails.env.development?
       price: "500"
     )
   end
-end
 
 Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira no 70
 Bairro do Recife - Recife, PE 50030-280, Brazil')
