@@ -29,6 +29,9 @@
           <% end %>
         <% if current_user.carrier %>
           <li class="nav-item">
+            <%= link_to "Home", carriers_home_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Add a freight", new_carriers_freight_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
@@ -38,9 +41,7 @@
               <%= image_tag 'default-user-profile-image.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Manage your orders", carriers_bookings_path, class: "dropdown-item" %>
-            <%= link_to "My freights", carriers_freights_path, class: "dropdown-item" %>
-            <%= link_to "Edit my profile", edit_carriers_profile_path, class: "dropdown-item" %>
+              <%= link_to "Edit my profile", edit_carriers_profile_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

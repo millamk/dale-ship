@@ -1,0 +1,54 @@
+.container {
+  margin: 30px auto;
+  color: #353530;
+}
+
+.dashboard-cards {
+  padding: 0 18%;
+  a {
+  text-decoration: none;
+  color: #353530;
+  }
+}
+
+.dashboard {
+  border-radius: 16px;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+  padding: 30px;
+  width: 310px;
+  h2 {
+    font-weight: bold;
+    font-size: 23px;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.img-dashboard-one {
+  background-image: url(asset_path("box.png"));
+  width: 120px;
+  height: 120px;
+  padding: 50px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+}
+
+.img-dashboard-two {
+  background-image: url(asset_path("sea.png"));
+  width: 120px;
+  height: 120px;
+  padding: 50px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+}
