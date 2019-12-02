@@ -1,0 +1,16 @@
+  <%= simple_form_for(@shipper, url: shippers_profile_path) do |f| %>
+    <div class="form-inputs col-12">
+    <h2>Please update your profile:</h2>
+    <div class="profile-form">
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+    </div>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :CNPJ %>
+    <%= f.input :company_name %>
+    <%= f.input :job_title %>
+    <%= f.input :vol_freq %>
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+  <% end %>
+  </div>

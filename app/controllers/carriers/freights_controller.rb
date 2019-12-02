@@ -28,11 +28,10 @@ class Carriers::FreightsController < ApplicationController
 
   def update
     @freight = Freight.find(params[:id])
-    if @freight.update(freight_params)
-      redirect_to carriers_freight_path(@freight)
-    else
-      render :edit
-    end
+    @freight.origin = Port.find(params[:freight][:origin]).name
+    @freight.destination = Port.find(params[:freight][:destination]).name
+    @freight.update(freight_params)
+    redirect_to carriers_freight_path(@freight)
   end
 
   def show

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :dispatch_user
+  add_flash_types :full
 
   def dispatch_user
     return unless current_user

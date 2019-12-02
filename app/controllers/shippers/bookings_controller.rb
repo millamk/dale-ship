@@ -5,5 +5,6 @@ class Shippers::BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @shipper = current_user.shipper
   end
 end
