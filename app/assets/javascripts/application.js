@@ -1,6 +1,7 @@
 //= require jquery
 //= require rails-ujs
 //= require select2
+//= require select2-full
 //= require_tree .
 
 $(document).ready(function(){
