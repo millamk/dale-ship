@@ -55,12 +55,10 @@ Port.destroy_all
     )
   end
 
-Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira no 70
-Bairro do Recife - Recife, PE 50030-280, Brazil')
-Port.create!(name: 'Manaus', address: 'R. Taqueirinha, 25 - Centro, Manaus - AM, 69005-420')
-Port.create!(name: 'Fortaleza', address: 'Marfisa Maria de Aguiar Ferreira Ximenes - Praca Amigos da Marinha S/n – Mucuripe
-Fortaleza, CE 60182 640 - Brazil')
-Port.create!(name: 'Rio Grande', address: 'Hondrio Bicalho Ave, W/N - Mailbox 198 - Rio Grande, RS 96201-020 - Brazil')
+Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira, Recife')
+Port.create!(name: 'Manaus', address: 'R. Taqueirinha, Manaus')
+Port.create!(name: 'Fortaleza', address: 'Praca Amigos da Marinha, Mucuripe')
+Port.create!(name: 'Rio Grande', address: 'Avenida Honorio Bicalho, Rio Grande')
 Port.create!(name: 'Santos', address: ' Avenida Rodrigues Alves s/n Santos, Sao Baulo 11015-900 Brazil')
 Port.create!(name: 'Shangai', address: '358 East Daming Road Shanghai, Shanghai 200080 China')
 Port.create!(name: 'Ningbo', address: '496 Yanjiang Dong Road Ningbo, Zhejiang 315200 China')
