@@ -18,6 +18,9 @@ class Carriers::ProfilesController < ApplicationController
     @carrier = current_user.carrier
   end
 
+  def home
+  end
+
   private
 
   def carrier_params

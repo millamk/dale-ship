@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :carriers do
+    get 'home', to: 'profiles#home'
     resources :freights, only: %i[index new create show edit update destroy]
     resource :profile, only: %i[edit update show]
     resources :bookings, only: [:index, :edit, :update, :show]
