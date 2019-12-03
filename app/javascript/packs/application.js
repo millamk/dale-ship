@@ -8,3 +8,9 @@ import 'flatpickr/dist/flatpickr.min.css'
 flatpickr(".datepicker", {
 
 });
+
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
+
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
