@@ -1,0 +1,57 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-banner">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "dale-logo-2.png", alt: "Dale Ship" %>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <% if current_user.shipper %>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <% if current_user.shipper.photo? %>
+            <%= cl_image_tag current_user.shipper.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+            <%= image_tag 'default-user-profile-image.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My bookings", shippers_bookings_path, class: "dropdown-item" %>
+            <%= link_to "Edit my profile", edit_shippers_profile_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+          </li>
+          <% end %>
+        <% if current_user.carrier %>
+          <li class="nav-item">
+            <%= link_to "Home", carriers_home_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a freight", new_carriers_freight_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <% if current_user.carrier.photo? %>
+              <%= cl_image_tag current_user.carrier.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag 'default-user-profile-image.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit my profile", edit_carriers_profile_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+        <% end %>
+      <% else %>
+        <li class="nav-item row">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
