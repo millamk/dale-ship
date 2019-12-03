@@ -55,14 +55,22 @@ Port.destroy_all
     )
   end
 
-Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira no 70
-Bairro do Recife - Recife, PE 50030-280, Brazil')
+Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira no 70 Bairro do Recife - Recife, PE 50030-280, Brazil')
 Port.create!(name: 'Manaus', address: 'R. Taqueirinha, 25 - Centro, Manaus - AM, 69005-420')
-Port.create!(name: 'Fortaleza', address: 'Marfisa Maria de Aguiar Ferreira Ximenes - Praca Amigos da Marinha S/n – Mucuripe
-Fortaleza, CE 60182 640 - Brazil')
+Port.create!(name: 'Fortaleza', address: 'Av. Vicente de Castro - Cais do Porto, Fortaleza - CE, 60180-410')
 Port.create!(name: 'Rio Grande', address: 'Hondrio Bicalho Ave, W/N - Mailbox 198 - Rio Grande, RS 96201-020 - Brazil')
-Port.create!(name: 'Santos', address: ' Avenida Rodrigues Alves s/n Santos, Sao Baulo 11015-900 Brazil')
-Port.create!(name: 'Shangai', address: '358 East Daming Road Shanghai, Shanghai 200080 China')
-Port.create!(name: 'Ningbo', address: '496 Yanjiang Dong Road Ningbo, Zhejiang 315200 China')
+Port.create!(name: 'Santos', address: 'Av. Conselheiro Rodrigues Alves, S/N, Santos - SP, 11015-900')
+Port.create!(name: 'Itajaí', address: 'Av. Eng.º Leite Ribeiro, 782, Caixa Postal 71')
+Port.create!(name: 'São Francisco do Sul', address: 'SCPAR Porto de São Francisco do Sul - Rua Engenheiro Leite Ribeiro - Centro, São Francisco do Sul - SC')
+Port.create!(name: 'Tianjin', address: 'Tianjin Port, Binhai, China')
+Port.create!(name: 'Shangai', address: '825 Gangjian Rd, Pudong, Shanghai, China')
+Port.create!(name: 'Ningbo', address: 'Yanjiang E Rd, Zhenhai, Ningbo, Zhejiang, China')
+Port.create!(name: 'Guangzhou', address: 'Guangzhou New Port, Huandao Road, Haizhu, Cantão, Guangdong, China')
+Port.create!(name: 'Singapore', address: '460 Alexandra Road #19-00 PSA Building Singapore 119963 Singapore')
+Port.create!(name: 'Rotterdam', address: '3198 LK Europoort Rotterdam, Países Baixos')
+Port.create!(name: 'Quingdao', address: 'Qingdao Port, Shibei, Qingdao, China')
+Port.create!(name: 'Dalian', address: 'Port of Dalian, Shugang Rd, Zhongshan, Dalian, Liaoning, China')
+Port.create!(name: 'Busan', address: '79-9, Jungan-Dong 4GA Jung-Gu Busan 600-016 Korea, South')
+Port.create!(name: 'Miami', address: 'Port of Miami, Miami, Flórida, EUA')
 
 puts 'Finished!'
