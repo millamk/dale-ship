@@ -1,3 +1,15 @@
+	<div class="dflex formhome">
+	  <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
+	    <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field', placeholder: 'Origin'  %>
+	    <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field',
+	    placeholder: 'Destination'  %>
+	    <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control input-field", placeholder: "Ready to Load"%>
+	    <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2 input-field', placeholder: 'Type of Shipment'  %>
+	    <%= submit_tag 'Search', class: 'btn btn-primary' %>
+	    <% end %>
+	    </div>
+	  </div>
+	</div>
 
 <div
   id="map"
@@ -7,26 +19,25 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
+<div class="search-results">
 <% @search.each do |freight| %> 
-	<div class="row">
-	  <div class="col-sm-4">
-	    <div class="card">
-	      <div class="card-body freightcard"> 
+	    <div class="card-search">
+		    <div class="box-left">
 	        <h5 class="card-title">Company name</h5>
 	        <p class="card-text">Origin: <%= freight.origin %></p>
 	        <p class="card-text">Destination: <%= freight.destination %></p>
 	        <p>
 				    Ready to Load Date: <%=freight.ready_to_load.day %> / <%=freight.ready_to_load.month %> / <%=freight.ready_to_load.year %> 
 			    </p> 
+		    </div>
+		    <div class="box-right">
 			    <p> 
 				    Type of Shipment: <%=freight.type_of_shipment %>	<%=freight.container_pack %>
 			    </p> 
 		    	<%= simple_form_for [freight, @booking]  do |f| %>
 		        <%= f.submit 'Book now', class: 'btn btn-primary' %>
-		      <% end %>	      
-		    </div>
+		      <% end %>	   
+	      </div>   
 	    </div>
-	  </div>
-	</div>	
 <% end %> 
-
+</div>

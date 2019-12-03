@@ -17,7 +17,7 @@ $(document).ready(function(){
 		theme: "bootstrap",
 		width: 100
 	})
-	$('#type_of_shipment').select2({
+	$('.type_of_shipment').select2({
 		placeholder: ' ',
 		allowClear: true,
 		theme: "bootstrap",

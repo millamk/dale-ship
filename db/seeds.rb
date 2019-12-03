@@ -55,12 +55,18 @@ Port.destroy_all
     )
   end
 
-Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira, Recife')
+Port.create!(name: 'Recife', address: 'Praça Comunidade Luso Brasileira, Recife', latitude: -8.05555555556, longitude: -34.8911111111)
 Port.create!(name: 'Manaus', address: 'R. Taqueirinha, Manaus')
-Port.create!(name: 'Fortaleza', address: 'Praca Amigos da Marinha, Mucuripe')
+Port.create!(name: 'Fortaleza', address: 'Praca Amigos da Marinha, Mucuripe', latitude: -3.71722, longitude:  -38.54306)  
 Port.create!(name: 'Rio Grande', address: 'Avenida Honorio Bicalho, Rio Grande')
-Port.create!(name: 'Santos', address: ' Avenida Rodrigues Alves s/n Santos, Sao Baulo 11015-900 Brazil')
-Port.create!(name: 'Shangai', address: '358 East Daming Road Shanghai, Shanghai 200080 China')
-Port.create!(name: 'Ningbo', address: '496 Yanjiang Dong Road Ningbo, Zhejiang 315200 China')
+Port.create!(name: 'Santos', address: 'Av. Guilherme Weinschenck, 16 - Docas, Santos - SP, 11013-260', latitude: -23.9759994293, longitude: -46.2888955111)
+Port.create!(name: 'Shangai', address: '358 East Daming Road Shanghai, Shanghai')
+Port.create!(name: 'Ningbo', address: 'Yanjiang Dong Road Ningbo, Zhejiang', latitude: 31.219832454, longitude: 121.486998052)
+Port.create!(name: 'Guangzhou', address: '531 Gang Qian Lu, Huangpu, Guangzhou, Guangdong', latitude: 23.093865, longitude: 113.437786)
+Port.create!(name: 'Busan', address: 'Jungangdong 4(sa)-ga, Busan', latitude: 35.166668, longitude: 129.066666)
+
 
 puts 'Finished!'
+
+
+

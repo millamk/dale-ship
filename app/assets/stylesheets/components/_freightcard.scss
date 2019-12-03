@@ -4,3 +4,33 @@
 	box-shadow: 2px;
 	// margin: 5px;
 }
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+		.card-search {
+			width: 50%;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			padding: 30px;
+			box-shadow: 1px 4px 15px -6px #000000;
+			display: flex;
+			.box-left {
+				width: 70%;
+			}
+
+		}
+}
+
+.flatpickr-input {
+	background: white !important;
+}
+
+.form-inline {
+	.input-field {
+		// border-radius: 50px;
+		border: 1px solid blue;
+	}
+}
