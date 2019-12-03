@@ -1,8 +1,8 @@
 <div class="container">
 <h1>My bookings</h1>
 
-  <table class='table'>
-    <thead class="thead-dark">
+  <table class='table table-striped'>
+    <thead class="head-table text-center">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Origin</th>
@@ -12,21 +12,21 @@
         <th scope="col">Container</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
-        <th scope="col">More details</th>
+        <th scope="col">Details</th>
       </tr>
     </thead>
     <tbody>
       <% @bookings.each do |booking| %>
-        <tr>
+        <tr class="text-center">
           <th scope="row"><%= booking.freight.id %></th>
           <td><%= booking.freight.origin %></td>
           <td><%= booking.freight.destination %></td>
-          <td><%= booking.freight.ready_to_load.day %> / <%= booking.freight.ready_to_load.month %> / <%= booking.freight.ready_to_load.year %></td>
+          <td><%= booking.freight.ready_to_load.strftime('%d %b, %Y') %></td>
           <td><%= booking.freight.type_of_shipment %></td>
           <td><%= booking.freight.container_pack %></td>
           <td><%= booking.freight.price %></td>
           <td><%= booking.status.capitalize %></td>
-          <td><%= link_to "Click here", shippers_booking_path(booking), class: 'btn btn-secondary' %></td>
+          <td><%= link_to "See more", shippers_booking_path(booking), class: 'btn btn-secondary btn-sm' %></td>
         </tr>
       <% end %>
     </tbody>

@@ -1,0 +1,24 @@
+.head-table {
+  background: linear-gradient(107deg, rgba(5, 117, 230,1) 0%, rgba(0, 242, 96,1) 100%)
+}
+
+.td {
+  text-align: center;
+}
+
+td, th {
+  vertical-align: middle !important;
+   .form-group{
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.option {
+  background-image: none !important;
+  border: solid gray 1px !important;
+
+  width: 70%;
+}

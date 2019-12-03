@@ -1,31 +1,34 @@
-
 <div class="container">
 <h1>My list of freight</h1>
 
-	<table class='table'>
-		<thead class="thead-dark">
+	<table class='table table-striped'>
+		<thead class="head-table text-center">
 		  <tr>
 		  	<th scope="col">#</th>
 		    <th scope="col">Origin</th>
 		    <th scope="col">Destination</th>
-		    <th scope="col">Ready to Load</th>
-		    <th scope="col">Type of Shipment</th>
-		    <th scope="col">Container Pack</th>
-		    <th scope="col">Expire Date</th>
+		    <th scope="col">Ready to load</th>
+		    <th scope="col">Shipment</th>
+		    <th scope="col">Container</th>
+		    <th scope="col">Expire date</th>
 		    <th scope="col">Price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
 		  </tr>
 	  </thead>
 	  <tbody>
 	    <% @freights.each do |freight| %>
-			  <tr>
+			  <tr class="text-center">
 			  	<th scope="row"><%= freight.id %></th>
 			    <td><%= freight.origin %></td>
 			    <td><%= freight.destination %></td>
-			    <td><%= freight.ready_to_load %></td>
+			    <td><%= freight.ready_to_load.strftime('%d %b, %Y') %></td>
 			    <td><%= freight.type_of_shipment %></td>
 			    <td><%= freight.container_pack %></td>
-			    <td><%= freight.expire_date %></td>
+			    <td><%= freight.expire_date.strftime('%d %b, %Y') %></td>
 			    <td><%= freight.price %></td>
+          <td><%= link_to "Edit", edit_carriers_freight_path(id: freight.id), class: 'btn btn-secondary btn-sm' %></td>
+          <td><%= link_to "Delete", carriers_freight_path(id: freight.id), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %></td>
 			  </tr>
 		  <% end %>
 	  </tbody>
