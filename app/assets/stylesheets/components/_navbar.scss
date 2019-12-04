@@ -14,3 +14,26 @@
 .banner {
   background-image: url('../../images/multimodal.png');
 }
+
+.navbar-banner {
+  justify-content: space-between;
+  background: transparent;
+  transition: 0.5s background-color ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 98vw;
+}
+
+.navbar-banner-white {
+  background-color: white;
+  z-index: 100;
+}
+
+.navbar-banner .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-banner .navbar-brand img {
+  width: 45px;
+}

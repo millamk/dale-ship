@@ -1,16 +1,18 @@
-<div class="container  ">
-	<h2 class="roletitle">Select your role</h2>
-	<div class="newrole offset-4 col-4 text-center">
-  <%= form_with(url: roles_path, method: "post", local: true) do %>
-    <%= radio_button_tag(:role, "shipper") %>
-    <%= label_tag(:role_child, "I'm a shipper") %>
-    <div>
-    <%= radio_button_tag(:role, "carrier") %>
-    <%= label_tag(:role_adult, "I'm a carrier") %>
+<div class="container">
+  <h2 class="roletitle">Select your role</h2>
+	  <div class="newrole offset-4 col-4 text-center">
+      <%= form_with(url: roles_path, method: "post", local: true, class: 'form-roles') do %>
+      <div class="role-shipper">
+      <%= radio_button_tag(:role, "shipper") %>
+      <%= label_tag(:role_child, "I'm a shipper") %>
+      </div>
+      <div class="role-carrier">
+      <%= radio_button_tag(:role, "carrier") %>
+      <%= label_tag(:role_adult, "I'm a carrier") %>
+      </div>
     </div>
-    <div class="newrole_btn">
-    <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+    <div class="newrole-btn">
+      <%= submit_tag 'Submit', class: 'btn btn-primary' %>
     </div>
-  <% end %>
-  </div>
+      <% end %>
 </div>
