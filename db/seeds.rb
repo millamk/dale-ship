@@ -74,3 +74,6 @@ Port.create!(name: 'Busan', address: '79-9, Jungan-Dong 4GA Jung-Gu Busan 600-01
 Port.create!(name: 'Miami', address: 'Port of Miami, Miami, Flórida, EUA')
 
 puts 'Finished!'
+
+
+

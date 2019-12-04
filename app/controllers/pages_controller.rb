@@ -13,6 +13,15 @@ class PagesController < ApplicationController
       end
     end
     @search = @freights - @results
+
+    @ports = [Port.find_by(name: params[:origin]), Port.find_by(name: params[:destino])]
+
+    @markers = @ports.map do |port|
+      {
+        lat: port.latitude,
+        lng: port.longitude
+      }
+    end
   end
 
   def home
