@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery prepend: true
   before_action :authenticate_user!
   before_action :dispatch_user
-  protect_from_forgery prepend: true
   add_flash_types :full
 
   def dispatch_user
