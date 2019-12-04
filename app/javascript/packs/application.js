@@ -20,3 +20,6 @@ initUpdateNavbarOnScroll();
 
 import { refreshStatus } from '../components/change-status';
 refreshStatus();
+
+import expiredTable from '../components/expiredTable';
+expiredTable();

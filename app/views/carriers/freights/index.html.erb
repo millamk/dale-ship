@@ -17,7 +17,7 @@
 		  </tr>
 	  </thead>
 	  <tbody>
-	    <% @freights.each do |freight| %>
+	    <% @freights_valid.each do |freight| %>
 			  <tr class="text-center">
 			  	<th scope="row"><%= freight.id %></th>
 			    <td><%= freight.origin %></td>
@@ -27,10 +27,54 @@
 			    <td><%= freight.container_pack %></td>
 			    <td><%= freight.expire_date.strftime('%d %b, %Y') %></td>
 			    <td><%= freight.price %></td>
-          <td><%= link_to "Edit", edit_carriers_freight_path(id: freight.id), class: 'btn btn-secondary btn-sm' %></td>
-          <td><%= link_to "Delete", carriers_freight_path(id: freight.id), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %></td>
+          <td><%= link_to edit_carriers_freight_path(id: freight.id) do %>
+            <%= image_tag "162-edit.png", :size => "25x25" %>
+            <% end %>
+          </td>
+          <td><%= link_to carriers_freight_path(id: freight.id), method: :delete, data: { confirm: "Are you sure?"} do %>
+            <%= image_tag "045-trash-can-1.png", :size => "25x25" %>
+            <% end %>
+          </td>
 			  </tr>
 		  <% end %>
 	  </tbody>
 	</table>
+  <div id="toggle-detail"><i id="toggle-icon" class="fas fa-sort-down pb-2"></i></div>
+  <table class='table table-striped table-display-none' id="expired-table">
+    <thead class="head-table text-center">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Origin</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Ready to load</th>
+        <th scope="col">Shipment</th>
+        <th scope="col">Container</th>
+        <th scope="col">Expire date</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @freights_expired.each do |freight| %>
+        <tr class="text-center">
+          <th scope="row"><%= freight.id %></th>
+          <td><%= freight.origin %></td>
+          <td><%= freight.destination %></td>
+          <td><%= freight.ready_to_load.strftime('%d %b, %Y') %></td>
+          <td><%= freight.type_of_shipment %></td>
+          <td><%= freight.container_pack %></td>
+          <td><%= freight.expire_date.strftime('%d %b, %Y') %></td>
+          <td><%= freight.price %></td>
+          <td><%= link_to edit_carriers_freight_path(id: freight.id) do %>
+            <%= image_tag "162-edit.png", :size => "25x25" %>
+            <% end %>
+          <td><%= link_to carriers_freight_path(id: freight.id), method: :delete, data: { confirm: "Are you sure?"} do %>
+            <%= image_tag "045-trash-can-1.png", :size => "25x25" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
