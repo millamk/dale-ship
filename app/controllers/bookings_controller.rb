@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @booking.freight = Freight.find(params[:freight_id])
     @booking.status = 'Pending'
     @booking.save
-    redirect_to shippers_booking_path(@booking)
+    redirect_to shippers_bookings_path
     else
     flash[:full] = "We're sorry to inform that this freight is no longer available"
     redirect_to root_path

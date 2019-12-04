@@ -1,7 +1,9 @@
 class Carriers::BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update, :show]
+  before_action :set_booking, only: [:edit, :update]
+
   def index
     @bookings = Booking.joins(:freight).where(freights: {carrier_id: current_user.carrier})
+    @bookings = @bookings.where(status: params[:status]) if params[:status].present?
   end
 
   def edit
@@ -13,9 +15,6 @@ class Carriers::BookingsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def show
   end
 
   private
