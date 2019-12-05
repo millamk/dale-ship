@@ -7,10 +7,10 @@
     </div>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.input :CNPJ %>
+    <%= f.input :CNPJ, label: 'CNPJ' %>
     <%= f.input :company_name %>
     <%= f.input :job_title %>
-    <%= f.input :vol_freq %>
+    <%= f.input :vol_freq, label: 'How often do you ship freights?' %>
     <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
   <% end %>
   </div>

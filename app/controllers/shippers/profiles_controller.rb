@@ -8,7 +8,7 @@ class Shippers::ProfilesController < ApplicationController
     @shipper = current_user.shipper
     @shipper.update(shipper_params)
     if @shipper.save
-      redirect_to shippers_profile_path
+      redirect_to shippers_bookings_path
     else
       render :edit
     end
