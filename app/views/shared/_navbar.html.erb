@@ -33,10 +33,10 @@
           <% end %>
         <% if current_user.carrier %>
           <li class="nav-item">
-            <%= link_to "Home", carriers_home_path, class: "nav-link" %>
+            <%= link_to "Home", carriers_home_path, class: "nav-link nav-home" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add a freight", new_carriers_freight_path, class: "nav-link" %>
+            <%= link_to "Add a freight", new_carriers_freight_path, class: "nav-link nav-freight mr-2" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.carrier.photo? %>
@@ -52,7 +52,7 @@
         <% end %>
       <% else %>
         <li class="nav-item row">
-          <%= link_to "Login", new_user_session_path, class: "nav-link-login mr-2" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link mr-2" %>
           <%= link_to "Register", new_user_registration_path, class: "btn-register" %>
         </li>
 
