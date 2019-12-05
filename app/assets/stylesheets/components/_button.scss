@@ -10,3 +10,14 @@
   background: #1BCB7F;
   color: white;
 }
+
+.book-now {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  background-color: #F46355;
+  border-color: #F46355;
+  &:hover {
+    background-color: #f45655;
+    border-color: #f45655;
+  }
+}
