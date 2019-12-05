@@ -22,19 +22,19 @@
 	<% @search.each do |freight| %>
 	<div class="card-search">
 		<div class="box-left">
-			<h5 class="card-title">Company name</h5>
+			<h6 class="card-title">Company name</h6>
 			<div class="d-flex origindestination">
 				<p class="card-text"> <%= freight.origin %></p>
 				<div class="lineroute">
 					<i class="fas fa-anchor"></i>
-					<span class="routeeicon"> <i class="fas fa-ship"></i> </span>
+					<span class="routeeicon"> <span style="color:#4285F4"><i class="fas fa-ship"></i> </span></span>
 					<i class="fas fa-anchor"></i>
 					<hr>
 				</div>
 				<p class="card-text"> <%= freight.destination %></p>
 			</div>
 			<div>
-				Expire Date: <%=freight.expire_date.day %> / <%=freight.expire_date.month %> / <%=freight.expire_date.year %>
+				<span class="search-date">Expire date: <%=freight.expire_date.strftime('%d %b, %Y')%></span>
 			</div>
 		</div>
 		<div class="box-right">
@@ -44,7 +44,7 @@
 			<div class="bookbtn">
 				<%= simple_form_for [freight, @booking]  do |f| %>
   				<p class="ppp"> $ <%= freight.price %> </p>
-  				<%= f.submit " Book now", class: 'btn btn-primary' %>
+  				<%= f.submit " Book now", class: 'btn btn-primary book-now' %>
 			 <% end %>
 			</div>
 		</div>

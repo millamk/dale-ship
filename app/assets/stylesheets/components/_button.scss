@@ -11,6 +11,31 @@
   color: white;
 }
 
+.book-now {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  background-color: #F46355;
+  border-color: #F46355;
+  &:hover {
+    background-color: #f45655;
+    border-color: #f45655;
+  }
+}
+
+.btn-register {
+  color: #e8e8e8;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: #565656;
+  transition: background 0.3s ease;
+}
+
+.btn-register:hover {
+  text-decoration: none;
+  background: #565656;
+  color: white;
+}
+
 .btn-contactform {
   position: absolute;
   top: 80px;

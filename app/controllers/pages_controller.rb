@@ -6,9 +6,13 @@ class PagesController < ApplicationController
     results = []
     freights = Freight.start(params[:origin]).finish(params[:destino]).ready(Date.parse(params[:ready_to_load])).type(params[:type_of_shipment])
     freights.each do |freight|
-      freight.bookings.each do |booking|
-        if booking.status == 'approved'
-          results << freight
+      if freight.expire_date < DateTime.now.to_date
+        results << freight
+      else
+        freight.bookings.each do |booking|
+          if booking.status == 'approved'
+            results << freight
+          end
         end
       end
     end
