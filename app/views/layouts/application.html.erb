@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Dale Ship</title>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.css" rel="stylesheet" />
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= favicon_link_tag asset_path('favicon-32x32.png') %>
   </head>
   <body>
     <% if current_page?(root_path) %>
@@ -24,3 +25,4 @@
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
+
