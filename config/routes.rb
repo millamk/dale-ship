@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'home', to: 'profiles#home'
     resources :freights, only: %i[index new create show edit update destroy]
     resource :profile, only: %i[edit update show]
-    resources :bookings, only: [:index, :edit, :update, :show]
+    resources :bookings, only: [:index, :edit, :update]
   end
 
   resources :freights, only: [] do
@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get :search, to: 'pages#search'
 
   root to: 'pages#home'
+
+  # get '/404', to: 'errors#not_found'
+  # get '/422', to: 'errors#unacceptable'
+  # get '/500', to: 'errors#server_error'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

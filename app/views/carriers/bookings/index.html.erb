@@ -9,16 +9,15 @@
     <% end %>
     </div>
   </div>
-  <table class='table'>
-    <thead class="thead-dark">
+  <table class='table table-striped'>
+    <thead class="head-table text-center">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Origin</th>
         <th scope="col">Destination</th>
-        <th scope="col">Ready to Load</th>
-        <th scope="col">Type of Shipment</th>
-        <th scope="col">Container Pack</th>
-        <th scope="col">Expire Date</th>
+        <th scope="col">Ready to load</th>
+        <th scope="col">Type of shipment</th>
+        <th scope="col">Container</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
         <th scope="col">Edit</th>
@@ -26,21 +25,27 @@
     </thead>
     <tbody>
       <% @bookings.each do |booking| %>
-        <tr>
+        <tr class="text-center">
           <th scope="row"><%= booking.id %></th>
           <td><%= booking.freight.origin %></td>
           <td><%= booking.freight.destination %></td>
-          <td><%= booking.freight.ready_to_load %></td>
+          <td><%= booking.freight.ready_to_load.strftime('%d %b, %Y') %></td>
           <td><%= booking.freight.type_of_shipment %></td>
           <td><%= booking.freight.container_pack %></td>
-          <td><%= booking.freight.expire_date %></td>
           <td><%= booking.freight.price %></td>
           <td><%= booking.status.capitalize %></td>
-          <% if booking.status == 'pending' %>
-          <td><%= link_to "Click here", edit_carriers_booking_path(booking), class: 'btn btn-secondary' %></td>
-          <% end %>
+          <td>
+
+            <% if booking.status == 'pending' %>
+              <%#= link_to "Click here", edit_carriers_booking_path(booking), class: 'btn btn-secondary btn-sm' %>
+              <%= simple_form_for [:carriers, booking], remote: true, class: 'm-0' do |f| %>
+                <%= f.input :status, collection: ['Approved', 'Rejected'], novalidate:'novalidate', class: 'm-0', label: false, input_html: { class: "option", :data => { :id => booking.id}} %>
+              <% end %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+

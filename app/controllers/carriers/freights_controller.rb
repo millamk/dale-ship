@@ -2,7 +2,8 @@ class Carriers::FreightsController < ApplicationController
   before_action :freight_params, only: :create
 
   def index
-    @freights = current_user.carrier.freights
+    @freights_valid = current_user.carrier.freights.not_expired
+    @freights_expired = current_user.carrier.freights - @freights_valid
     @bookings = Booking.joins(:freight).where(freights: { carrier_id: current_user.carrier }, status: 'available')
   end
 
@@ -16,7 +17,7 @@ class Carriers::FreightsController < ApplicationController
     @freight.destination = Port.find(params[:freight][:destination]).name
     @freight.carrier_id = current_user.carrier.id
     if @freight.save
-      redirect_to carriers_freight_path(@freight)
+      redirect_to carriers_freights_path
     else
       render :new
     end
@@ -31,11 +32,7 @@ class Carriers::FreightsController < ApplicationController
     @freight.origin = Port.find(params[:freight][:origin]).name
     @freight.destination = Port.find(params[:freight][:destination]).name
     @freight.update(freight_params)
-    redirect_to carriers_freight_path(@freight)
-  end
-
-  def show
-    @freight = Freight.find(params[:id])
+    redirect_to carriers_freights_path
   end
 
   def destroy

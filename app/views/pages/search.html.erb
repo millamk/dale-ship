@@ -1,9 +1,62 @@
-<h2>Your Search Results</h2>
 
- <% @search.each do |freight| %>
- <p>Origin: <%= freight.origin %> </p>
- <p>Destination: <%= freight.destination %></p>
- <%= simple_form_for [freight, @booking]  do |f| %>
-    <%= f.submit 'Book now', class: 'btn btn-primary' %>
-  <% end %>
- <% end %>
+	<div class="container">
+	<div class="dflex formhomesearch">
+		<%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
+		<!-- <span>Origin: </span> -->
+		<%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field', placeholder: 'Origin'  %>
+		<!-- <span>Destination:</span> -->
+		<%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field',
+		placeholder: 'Destination'  %>
+		<!-- <span>Date:</span> -->
+		<%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control input-field", placeholder: "Ready to Load"%>
+		<!-- <span>Shipment:</span> -->
+		<%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2 input-field', placeholder: 'Type of Shipment'  %>
+		<%= submit_tag 'Search', class: 'btn btn-primary' %>
+		<% end %>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="search-results">
+	<% @search.each do |freight| %>
+	<div class="card-search">
+		<div class="box-left">
+			<h5 class="card-title">Company name</h5>
+			<div class="d-flex origindestination">
+				<p class="card-text"> <%= freight.origin %></p>
+				<div class="lineroute">
+					<i class="fas fa-anchor"></i>
+					<span class="routeeicon"> <i class="fas fa-ship"></i> </span>
+					<i class="fas fa-anchor"></i>
+					<hr>
+				</div>
+				<p class="card-text"> <%= freight.destination %></p>
+			</div>
+			<div>
+				Expire Date: <%=freight.expire_date.day %> / <%=freight.expire_date.month %> / <%=freight.expire_date.year %>
+			</div>
+		</div>
+		<div class="box-right">
+			<p>
+				<%=freight.type_of_shipment %> <%=freight.container_pack %>
+			</p>
+			<div class="bookbtn">
+				<%= simple_form_for [freight, @booking]  do |f| %>
+  				<p class="ppp"> $ <%= freight.price %> </p>
+  				<%= f.submit " Book now", class: 'btn btn-primary' %>
+			 <% end %>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<div class="container">
+  <div
+  id="map"
+  style="width: 90%; height: 15rem; margin-left: 3.5rem; "
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
