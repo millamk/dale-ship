@@ -29,7 +29,7 @@ body {
 }
 
 .gridrow {
-  background-image: url(background-2.png);
+  background-image: image_url('background-2.png');
   background-size: cover;
   height: 375px;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ body {
 .gridrow2 {
   display: flex;
   justify-content: flex-end;
-  background-image: url(background-3.png);
+  background-image: image_url('background-3.png');
   background-size: cover;
   height: 375px;
   background-repeat: no-repeat;
