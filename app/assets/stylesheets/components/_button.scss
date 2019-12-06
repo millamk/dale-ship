@@ -44,3 +44,16 @@
   height: 100px;
   border: 3px solid #73AD21;
 }
+
+.btn-filter {
+  color: #e8e8e8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #565656 !important;
+  transition: background 0.3s ease;
+}
+
+.btn-filter:hover {
+  background: #565656;
+  color: white;
+}

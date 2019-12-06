@@ -5,7 +5,7 @@
     <span class="filter-title">Filter by status:</span>
     <%= form_tag carriers_bookings_path, method: :get do %>
     <%= select_tag :status, options_for_select(['Pending', 'Approved', 'Rejected']), {:prompt => "All", class: "form-control"} %>
-    <%= submit_tag :submit, class: "btn btn-primary" %>
+    <%= submit_tag :submit, value: 'Filter', class: "btn-filter" %>
     <% end %>
     </div>
   </div>
