@@ -1,21 +1,26 @@
 <div class="banner">
   <div class="container">
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
-    <h4 class="mb-3"><span id="banner-typed-text"></span></h4>
+    <h4 class="mb-4"><span id="banner-typed-text"></span></h4>
 
-<div class="dflex formhome">
-    <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
-      <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', placeholder: 'Origin'  %>
-      <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2',
-      placeholder: 'Destination'  %>
-      <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control", placeholder: "Ready to Load"%>
-      <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2', placeholder: 'Type of Shipment'  %>
-      <%= submit_tag 'Search', class: 'btn btn-primary' %>
-      <% end %>
-      </div>
-    </div>
+  <div class="search-title">
+    <label for="Origin" class="origin-search">ORIGIN</label>
+    <label for="Destination" class="destination-search">DESTINATION</label>
+    <span class="search-space"></span>
+    <label for="Type of shipments" class="type-search">TYPE</label>
   </div>
 
+  <div class="dflex formhome">
+      <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
+        <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Origin'  %>
+        <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Destination' %>
+        <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control", placeholder: "Ready to load"%>
+        <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2', placeholder: 'Type of Shipment'  %>
+        <%= submit_tag 'Search', class: 'btn-search' %>
+        <% end %>
+        </div>
+      </div>
+    </div>
 
 <div class="container ">
   <h1 class="text-center"><span style="color:#20b286">How it works</span></h1>
@@ -31,12 +36,12 @@
             <p>Book the best freight by price and conditions</p>
       </div>
       <div class="dashboardhome">
-          <i class="fab fa-docker" style="font-size:50px"></i>
+          <i class="fab fa-docker" style="color:#676763; font-size:50px"></i>
           <h2 class="subtitle"><span style="color:#20b286"> MANAGE </span> your shipments</h2>
           <p>Track your shipment status on every step</p>
       </div>
       <div class="dashboardhome">
-          <i class="far fa-star" style="font-size:50px"></i>
+          <i class="far fa-star" style="color:#676763; font-size:50px"></i>
             <h2 class="subtitle">Your feedback is <span style="color:#EAB647"> GOLD </span> for us</h2>
             <p>Your review helps us be better every day</p>
       </div>
@@ -48,7 +53,7 @@
     <div class="card text-center">
       <div class="gridrow">
           <div class='col-6'>
-            <h2 class="card-subtitle"><span style="color:white"><span style="color:#20b286">Technology</span> combined with international logistics</h2>
+            <h2 class="card-subtitle"><span style="color:white"><span style="color:#2FD09A">Technology</span> combined with international logistics</h2>
               <h4 class="card-description mb-4"><span style="color:white"> Get instant quote, no hidden fees</span></h4>
               <h4 class="card-description mb-4"><span style="color:white"> Book online quotation and reduce your international shipping costs</span></h4>
           </div>
@@ -62,7 +67,7 @@
   <h1 class="text-center"><span style="color:#20b286">Agents: Go global & grow your customer base</span></h1>
     <div class="d-flex dashboard-cards-home" style="justify-content: space-around;">
       <div class="dashboardhome">
-          <i class="far fa-newspaper" style="font-size:56px"></i>
+          <i class="far fa-newspaper" style="color:#676763; font-size:56px"></i>
             <h2 class="subtitle">New <span style="color:#20b286">BUSINESS</span> opportunities</h2>
             <p>Define your best ocean freight rates. Find eligible customers</p>
       </div>

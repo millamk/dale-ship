@@ -7,7 +7,7 @@
 
       <div class="d-flex align-items-center">
         <div>
-          <p class="m-0"><span style="color:grey; font-size:13px"><i class="fas fa-anchor"></i> DEPARTURE</p></span> <%= @booking.freight.origin %>
+          <p class="m-0"><span style="color:grey; font-size:13px"><strong><i class="fas fa-anchor"></i> DEPARTURE</p></span> <%= @booking.freight.origin %></strong>
         </div>
 
         <div class="px-5">
@@ -15,7 +15,7 @@
         </div>
 
         <div>
-          <p class="m-0"><span style="color:grey; font-size:13px"><i class="fas fa-anchor"></i> ARRIVAL</p></span> <%= @booking.freight.destination %>
+          <p class="m-0"><span style="color:grey; font-size:13px"><strong><i class="fas fa-anchor"></i> ARRIVAL</p></span> <%= @booking.freight.destination %></strong>
         </div>
       </div>
 
@@ -33,11 +33,11 @@
       <div class="total-freight">
         <div class="totally border-bottom">
           <p class="m-0 pb-1">OCEAN FREIGHT</p>
-          <p class="m-0 pb-1">$<%= @booking.freight.price %></p>
+          <p class="m-0 pb-1"><strong>$<%= @booking.freight.price %></p></strong>
         </div>
         <div class="totally">
           <p class="m-0 pt-2">TOTAL:</p>
-          <p class="m-0 pt-2">$<%= @booking.freight.price %></p>
+          <p class="m-0 pt-2"><strong>$<%= @booking.freight.price %></p></strong>
         </div>
       </div>
     </div>

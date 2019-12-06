@@ -26,7 +26,9 @@
           <td><%= booking.freight.container_pack %></td>
           <td><%= booking.freight.price %></td>
           <td><%= booking.status.capitalize %></td>
-          <td><%= link_to "See more", shippers_booking_path(booking), class: 'btn btn-secondary btn-sm' %></td>
+          <td><%= link_to shippers_booking_path(booking) do %>
+            <%= image_tag "113-file-1.png", :size => "25x25" %>
+            <% end %>
         </tr>
       <% end %>
     </tbody>

@@ -1,14 +1,23 @@
 <div class="container">
   <%= simple_form_for([:carriers, @freight]) do |f| %>
     <div class="form-inputs mt-3 offset-3 col-6">
-    <%= f.input :origin, collection: Port.all %>
-    <%= f.input :destination, collection: Port.all %>
-    <%= f.input :ready_to_load, label: 'Ready to load:', as: :date %>
-    <%= f.input :type_of_shipment, collection: ['FCL', 'LCL'] %>
-    <%= f.input :container_pack, collection: ['20', '40'] %>
-    <%= f.input :expire_date, as: :date %>
-    <%= f.input :price %>
-    <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
-  <% end %>
-  </div>
+      <div class="add-freight">
+        <h2 class="mb-5 text-center">Your freight information:</h2>
+        <div class="freight-form">
+          <%= f.input :origin, required: false, collection: Port.all %>
+          <span class="mr-4"></span>
+          <%= f.input :destination, required: false, collection: Port.all %>
+        </div>
+          <%= f.input :ready_to_load, required: false, label: 'Ready to load:', as: :date %>
+        <div class="freight-form">
+          <%= f.input :type_of_shipment, required: false, collection: ['FCL', 'LCL'] %>
+          <span class="mr-4"></span>
+          <%= f.input :container_pack, required: false, collection: ['20', '40'] %>
+        </div>
+          <%= f.input :expire_date, required: false, as: :date %>
+          <%= f.input :price, required: false, class: 'price-form' %>
+          <%= f.submit 'Submit', class: 'btn btn-primary btn-block' %>
+        <% end %>
+      </div>
+    </div>
 </div>
