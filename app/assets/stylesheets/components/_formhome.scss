@@ -50,6 +50,19 @@
   width: 23%;
 }
 
+@media (max-width: 1029px) {
+  .origin-search {
+    width: 50%;
+    margin-left: -4%;
+  }
+  .destination-search {
+  width: 112%;
+  }
+  .type-search {
+  width: 45%;
+  }
+}
+
 
 @media (max-width: 1029px) {
   .origin-search {
