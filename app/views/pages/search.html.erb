@@ -1,22 +1,23 @@
+  <div class="container">
+    <div class="search-title">
+      <label for="Origin" class="origin-search">ORIGIN</label>
+      <label for="Destination" class="destination-search">DESTINATION</label>
+      <span class="search-space"></span>
+      <label for="Type of shipments" class="type-search">TYPE</label>
+    </div>
+  </div>
 
-	<div class="container">
-	<div class="dflex formhomesearch">
-		<%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
-		<!-- <span>Origin: </span> -->
-		<%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field', placeholder: 'Origin'  %>
-		<!-- <span>Destination:</span> -->
-		<%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field',
-		placeholder: 'Destination'  %>
-		<!-- <span>Date:</span> -->
-		<%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control input-field", placeholder: "Ready to Load"%>
-		<!-- <span>Shipment:</span> -->
-		<%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2 input-field', placeholder: 'Type of Shipment'  %>
-		<%= submit_tag 'Search', class: 'btn btn-primary' %>
-		<% end %>
-	</div>
-</div>
-</div>
-</div>
+  <div class="container">
+	 <div class="dflex formhomesearch">
+	   <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
+		 <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field' %>
+		 <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field' %>
+     <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control input-field", placeholder: "Ready to Load"%>
+     <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2 input-field' %>
+		  <%= submit_tag 'Search', class: 'btn-search' %>
+		  <% end %>
+	 </div>
+  </div>
 
 <div class="search-results">
 	<% @search.each do |freight| %>
@@ -44,7 +45,7 @@
 			<div class="bookbtn">
 				<%= simple_form_for [freight, @booking]  do |f| %>
   				<p class="ppp"> $ <%= freight.price %> </p>
-  				<%= f.submit " Book now", class: 'btn btn-primary book-now' %>
+  				<%= f.submit "Book now", class: 'btn-book-now' %>
 			 <% end %>
 			</div>
 		</div>
