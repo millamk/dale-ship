@@ -1,23 +1,27 @@
-  <div class="container">
-    <div class="search-title">
-      <label for="Origin" class="origin-search">ORIGIN</label>
-      <label for="Destination" class="destination-search">DESTINATION</label>
-      <span class="search-space"></span>
-      <label for="Type of shipments" class="type-search">TYPE</label>
-    </div>
-  </div>
+<div class="container">
+	<div class="dflex formhomesearch">
+    <%= form_tag search_path, class: "search-form form-inline mb-3",  method: :get do %>
 
-  <div class="container">
-	 <div class="dflex formhomesearch">
-	   <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
-		 <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field' %>
-		 <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2 input-field' %>
-     <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control input-field", placeholder: "Ready to Load"%>
-     <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2 input-field' %>
-		  <%= submit_tag 'Search', class: 'btn-search' %>
-		  <% end %>
-	 </div>
-  </div>
+      <div>
+        <label for="origin">ORIGIN</label>
+        <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Origin', label: 'ORIGIN'  %>
+      </div>
+      <div>
+        <label for="Destination">DESTINATION</label>
+        <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Destination', label: 'DESTINATION' %>
+      </div>
+      <div>
+        <label for="ready_to_load">READY TO LOAD</label>
+        <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control mr-sm-2", placeholder: "Ready to load"%>
+      </div>
+      <div>
+        <label for="Type of shipments">TYPE</label>
+        <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2', placeholder: 'Type of Shipment'  %>
+      </div>
+      <%= submit_tag 'Search', class: 'btn-search' %>
+		<% end %>
+	</div>
+</div>
 
 <div class="search-results">
 	<% @search.each do |freight| %>
@@ -54,10 +58,9 @@
 </div>
 
 <div class="container">
-  <div
-  id="map"
+  <div  id="map"
   style="width: 90%; height: 15rem; margin-left: 3.5rem; "
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

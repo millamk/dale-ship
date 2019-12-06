@@ -22,57 +22,16 @@
 	margin-left: 10px;
 }
 
-.search-title {
-  color: #424242;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 0 20%;
-  display: flex;
-  text-align: left;
-  label{
-    margin-bottom: 0;
+.search-form {
+  label {
+    color: #424242;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: start !important;
+    margin-left: 5px;
   }
-}
 
-.origin-search {
-  width: 21%;
-}
-
-.destination-search {
-  width: 54%;
-}
-
-.search-space {
-  flex: 1 0 auto;
-}
-
-.type-search {
-  width: 23%;
-}
-
-@media (max-width: 1029px) {
-  .origin-search {
-    width: 50%;
-    margin-left: -4%;
-  }
-  .destination-search {
-  width: 112%;
-  }
-  .type-search {
-  width: 45%;
-  }
-}
-
-
-@media (max-width: 1029px) {
-  .origin-search {
-    width: 50%;
-    margin-left: -4%;
-  }
-  .destination-search {
-  width: 112%;
-  }
-  .type-search {
-  width: 45%;
+  input[type='submit'] {
+    margin-top: 17px;
   }
 }
