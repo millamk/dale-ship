@@ -51,7 +51,6 @@
         <th scope="col">Container</th>
         <th scope="col">Expire date</th>
         <th scope="col">Price</th>
-        <th scope="col">Edit</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -66,9 +65,6 @@
           <td><%= freight.container_pack %></td>
           <td><%= freight.expire_date.strftime('%d %b, %Y') %></td>
           <td><%= freight.price %></td>
-          <td><%= link_to edit_carriers_freight_path(id: freight.id) do %>
-            <%= image_tag "162-edit.png", :size => "25x25" %>
-            <% end %>
           <td><%= link_to carriers_freight_path(id: freight.id), method: :delete, data: { confirm: "Are you sure?"} do %>
             <%= image_tag "045-trash-can-1.png", :size => "25x25" %>
             <% end %>

@@ -23,6 +23,18 @@
   }
 }
 
+.nav-shipper {
+  height: 40px;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    border-bottom: 5px white solid;
+    transition: 0.5s;
+  }
+}
+
 .nav-home {
   height: 40px;
   color: black;

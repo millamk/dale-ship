@@ -21,3 +21,32 @@
 	border-radius: 5px;
 	margin-left: 10px;
 }
+
+.search-title {
+  color: #424242;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 20%;
+  display: flex;
+  text-align: left;
+  label{
+    margin-bottom: 0;
+  }
+}
+
+.origin-search {
+  width: 137px;
+}
+
+.destination-search {
+  width: 129px;
+}
+
+.search-space {
+  width: 243px;
+}
+
+.type-search {
+  width: 74px;
+}
+
