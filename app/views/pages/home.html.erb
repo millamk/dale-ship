@@ -3,85 +3,90 @@
     <h1>FIND THE BEST INTERNATIONAL FREIGHT QUOTES</h1>
     <h4 class="mb-4"><span id="banner-typed-text"></span></h4>
 
-  <div class="search-title">
-    <label for="origin" class="origin-search">ORIGIN</label>
-    <label for="Destination" class="destination-search">DESTINATION</label>
-    <span class="search-space"></span>
-    <label for="Type of shipments" class="type-search">TYPE</label>
-  </div>
-
-  <div class="dflex formhome">
-      <%= form_tag search_path, class: "form-inline  mb-3",  method: :get do %>
+    <div class="dflex formhome">
+    <%= form_tag search_path, class: "search-form form-inline mb-3",  method: :get do %>
+      <div>
+        <label for="origin">ORIGIN</label>
         <%= select_tag 'origin', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Origin', label: 'ORIGIN'  %>
-        <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Destination', label: 'DESTINATION' %>
-        <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control", placeholder: "Ready to load"%>
-        <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2 ml-sm-2', placeholder: 'Type of Shipment'  %>
-        <%= submit_tag 'Search', class: 'btn-search' %>
-        <% end %>
-        </div>
       </div>
+      <div>
+       <label for="Destination">DESTINATION</label>
+       <%= select_tag 'destino', options_for_select(Port.all.collect {|port| port.name}), include_blank: true, class: 'form-control mr-sm-2', value: 'Destination', label: 'DESTINATION' %>
+     </div>
+     <div>
+      <label for="ready_to_load">READY TO LOAD</label>
+      <%= text_field_tag :ready_to_load, params[:ready_to_load], class: "datepicker form-control mr-sm-2", placeholder: "Ready to load"%>
     </div>
+    <div>
+      <label for="Type of shipments">TYPE</label>
+      <%= select_tag 'type_of_shipment', options_for_select(['FCL', 'LCL']), include_blank: true, class: 'form-control mr-sm-2', placeholder: 'Type of Shipment'  %>
+    </div>
+    <%= submit_tag 'Search', class: 'btn-search' %>
+  <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="container ">
   <h1 class="text-center"><span style="color:#20b286">How it works</span></h1>
-    <div class="d-flex dashboard-cards-home" style="justify-content: space-around;">
-      <div class="dashboardhome">
-          <i class="fas fa-search-location" style="font-size:50px"></i>
-            <h2 class="subtitle">Get your freight <span style="color:#20b286">QUOTE</span></h2>
-            <p>We will provide the best conditions for you</p>
-      </div>
-      <div class="dashboardhome">
-          <i class="fas fa-calendar-check" style="font-size:50px"></i>
-            <h2 class="subtitle">Compare and <span style="color:#20b286"> BOOK </span></h2>
-            <p>Book the best freight by price and conditions</p>
-      </div>
-      <div class="dashboardhome">
-          <i class="fab fa-docker" style="color:#676763; font-size:50px"></i>
-          <h2 class="subtitle"><span style="color:#20b286"> MANAGE </span> your shipments</h2>
-          <p>Track your shipment status on every step</p>
-      </div>
-      <div class="dashboardhome">
-          <i class="far fa-star" style="color:#676763; font-size:50px"></i>
-            <h2 class="subtitle">Your feedback is <span style="color:#EAB647"> GOLD </span> for us</h2>
-            <p>Your review helps us be better every day</p>
-      </div>
+  <div class="d-flex dashboard-cards-home" style="justify-content: space-around;">
+    <div class="dashboardhome">
+      <i class="fas fa-search-location" style="font-size:50px"></i>
+      <h2 class="subtitle">Get your freight <span style="color:#20b286">QUOTE</span></h2>
+      <p>We will provide the best conditions for you</p>
     </div>
+    <div class="dashboardhome">
+      <i class="fas fa-calendar-check" style="font-size:50px"></i>
+      <h2 class="subtitle">Compare and <span style="color:#20b286"> BOOK </span></h2>
+      <p>Book the best freight by price and conditions</p>
+    </div>
+    <div class="dashboardhome">
+      <i class="fab fa-docker" style="color:#676763; font-size:50px"></i>
+      <h2 class="subtitle"><span style="color:#20b286"> MANAGE </span> your shipments</h2>
+      <p>Track your shipment status on every step</p>
+    </div>
+    <div class="dashboardhome">
+      <i class="far fa-star" style="color:#676763; font-size:50px"></i>
+      <h2 class="subtitle">Your feedback is <span style="color:#EAB647"> GOLD </span> for us</h2>
+      <p>Your review helps us be better every day</p>
+    </div>
+  </div>
 </div>
 
 <div>
   <div class="session3">
     <div class="card text-center">
       <div class="gridrow">
-          <div class='col-6'>
-            <h2 class="card-subtitle"><span style="color:white"><span style="color:#2FD09A">Technology</span> combined with international logistics</h2>
-              <h4 class="card-description mb-4"><span style="color:white"> Get instant quote, no hidden fees</span></h4>
-              <h4 class="card-description mb-4"><span style="color:white"> Book online quotation and reduce your international shipping costs</span></h4>
-          </div>
+        <div class='col-6'>
+          <h2 class="card-subtitle"><span style="color:white"><span style="color:#2FD09A">Technology</span> combined with international logistics</h2>
+          <h4 class="card-description mb-4"><span style="color:white"> Get instant quote, no hidden fees</span></h4>
+          <h4 class="card-description mb-4"><span style="color:white"> Book online quotation and reduce your international shipping costs</span></h4>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 <div class="container">
   <h1 class="text-center"><span style="color:#20b286">Agents: Go global & grow your customer base</span></h1>
-    <div class="d-flex dashboard-cards-home" style="justify-content: space-around;">
-      <div class="dashboardhome">
-          <i class="far fa-newspaper" style="color:#676763; font-size:56px"></i>
-            <h2 class="subtitle">New <span style="color:#20b286">BUSINESS</span> opportunities</h2>
-            <p>Define your best ocean freight rates. Find eligible customers</p>
-      </div>
-      <div class="dashboardhome">
-          <i class="fas fa-tasks" style="font-size:56px"></i>
-            <h2 class="subtitle"><span style="color:#20b286"> SELL</span> everywhere</h2>
-            <p>Use our online platform to sell shipping rates to anyone, anywhere</p>
-      </div>
-      <div class="dashboardhome">
-          <i class="fas fa-hat-wizard" style="font-size:56px"></i>
-          <h2 class="subtitle">ALL-IN-ONE <span style="color:#20b286">DASHBOARD</span></h2>
-          <p>Keep track of all your bookings. Do business with the world</p>
-      </div>
+  <div class="d-flex dashboard-cards-home" style="justify-content: space-around;">
+    <div class="dashboardhome">
+      <i class="far fa-newspaper" style="color:#676763; font-size:56px"></i>
+      <h2 class="subtitle">New <span style="color:#20b286">BUSINESS</span> opportunities</h2>
+      <p>Define your best ocean freight rates. Find eligible customers</p>
     </div>
+    <div class="dashboardhome">
+      <i class="fas fa-tasks" style="font-size:56px"></i>
+      <h2 class="subtitle"><span style="color:#20b286"> SELL</span> everywhere</h2>
+      <p>Use our online platform to sell shipping rates to anyone, anywhere</p>
+    </div>
+    <div class="dashboardhome">
+      <i class="fas fa-hat-wizard" style="font-size:56px"></i>
+      <h2 class="subtitle">ALL-IN-ONE <span style="color:#20b286">DASHBOARD</span></h2>
+      <p>Keep track of all your bookings. Do business with the world</p>
+    </div>
+  </div>
 </div>
 
 <div class="session4">
@@ -90,19 +95,19 @@
       <div class="gridrow2">
         <div class='col-6 py-4'>
           <h2 class="card-subtitlehome"><span style="color:#f1b831">Building digital bridges, driving real business</h2>
-          <h4 class="card-description mb-4"> Your partner for today and tomorrow</h4>
-          <h4 class="card-description"><span style="color:#20b286">BOOSTING</span> global connections + deals</h4>
+            <h4 class="card-description mb-4"> Your partner for today and tomorrow</h4>
+            <h4 class="card-description"><span style="color:#20b286">BOOSTING</span> global connections + deals</h4>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<section class="flex-container">
-  <div class="flex-item-1">
-  <%= image_tag("global_coverage.png", width: '650px') %>
-  </div>
-  <div class="flex-item-2">
+  <section class="flex-container">
+    <div class="flex-item-1">
+      <%= image_tag("global_coverage.png", width: '650px') %>
+    </div>
+    <div class="flex-item-2">
       <div class="contactform">
         <h3><span style="color:#F1B833">Contact Us</span></h3>
         <form>
@@ -123,5 +128,5 @@
           </div>
         </form>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
